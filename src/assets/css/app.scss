@@ -1,0 +1,342 @@
+@font-face {
+    font-family: quest;
+    src: url(../fonts/quest.ttf);
+}
+
+html{
+    min-height: 100%
+}
+body{
+    height: 100%
+}
+.MainContainer{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:auto;
+    z-index:-1;
+}
+
+.NavBar{
+    background-color:red;
+    height: 100vh;
+    width: 20%;
+    float: left;
+}
+
+.MainPage{
+    background-color:blue;
+    height: 100vh;
+    width: 80%;
+    float:left;
+}
+
+.SubPage{
+    background-color:yellow;
+    height: 100%;
+    width: 100%;
+    max-height: auto;
+}
+
+.CollectForm{
+    background-color:green;
+    height:40%;
+    width: 70%;
+    padding-left:10%;
+    margin-left: 10%;
+    margin-top:5%;
+    font-size: 20px;
+    color: red;
+    overflow: hidden;
+    .CollectTextInput{
+        width:80%;
+        height:60%;
+        margin-top:2%;
+    }
+
+    .CollectSubmitButton{
+        margin-top:2%;
+        height: 100px;
+        width: 150px;
+    }
+
+}
+
+
+.ProcessTab{
+    display: table;
+    height: 100%;
+    width: 100%;
+    background-color: purple;
+    text-align:center;
+
+    .CollectionBasket{
+        display:inline-block;
+        text-align:center;
+        background-color:red;
+        width: 40%;
+        min-height: 30%;
+        margin-top:5%;
+        font-size: 20px;
+        color: blue;
+        overflow: hidden;
+        position:relative;
+        .CollectionBasketButtons{
+            position:absolute;
+            width: 300px;
+            left:50%;
+            bottom:3%;
+            margin-left:-150px;
+            background-color: green;
+
+
+            button{
+                color:red;
+                height: 30px;
+            }
+        }
+    }
+    .NonActionable{
+        display:inline-block;
+        text-align:center;
+        background-color:red;
+        width: 40%;
+        min-height: 30%;
+        margin-top:5%;
+        font-size: 20px;
+        color: blue;
+        overflow: hidden;
+        position:relative;
+        .NonActionableButtons{
+            position:absolute;
+            width: 400px;
+            left:50%;
+            bottom:3%;
+            margin-left:-200px;
+            background-color: green;
+
+
+            button{
+                color:red;
+                height: 30px;
+            }
+        }
+    }
+    .Actionable{
+        display:inline-block;
+        text-align:center;
+        background-color:red;
+        width: 40%;
+        min-height: 30%;
+        margin-top:5%;
+        font-size: 20px;
+        color: blue;
+        overflow: hidden;
+        position:relative;
+        clear:both;
+        .AddPlan{
+            position:absolute;
+            width: 400px;
+            left:50%;
+            bottom:5%;
+            margin-left:-200px;
+            background-color: green;
+            height:90%;
+            .AddPlanInput{
+                width:80%;
+                height:80%;
+                margin-top:2%;
+            }
+            .AddPlanInputButton{
+                margin-top:2%;
+                width: 150px;
+                color:red;
+                height: 30px;
+            }
+        }    
+
+    }
+
+
+    .ActionNext{
+        display:inline-block;
+        text-align:center;
+        background-color:yellow;
+        width: 40%;
+        min-height: 30%;
+        margin-top:5%;
+        font-size: 20px;
+        color: blue;
+        overflow: hidden;
+        position:relative;
+        .ActionNextButtons{
+            position:absolute;
+            width: 400px;
+            left:50%;
+            bottom:3%;
+            margin-left:-200px;
+            background-color: green;
+
+            button{
+                color:red;
+                height: 30px;
+            }
+        }
+    }
+}
+
+
+.OrganizeTab{
+    display: table;
+    height: 100%;
+    width: 100%;
+    background-color: purple;
+    text-align:center;
+    .DoItBox{
+        display:inline-block;
+        text-align:center;
+        background-color:yellow;
+        width: 60%;
+        min-height: 60%;
+        margin-top:5%;
+        font-size: 20px;
+        color: blue;
+        position:relative;
+
+        .DoItList{
+            position:absolute;
+            width: 80%;
+            height: 60%;
+            left:50%;
+            top: 5%;
+            margin-left:-40%;
+            background-color: red;
+            overflow:auto;
+        }
+        .DoItItem{
+            position:absolute;
+            width: 80%;
+            height: 30%;
+            left:50%;
+            bottom:3%;
+            margin-left:-40%;
+            background-color: green;
+            .DoItItemButtons{
+                position:absolute;
+                width: 400px;
+                left:50%;
+                bottom:3%;
+                margin-left:-200px;
+                background-color: blue;
+                button{
+                    color:red;
+                    height: 30px;
+                }
+            }
+        }
+            
+    }
+    .DeferItBox{
+        display:inline-block;
+        text-align:center;
+        background-color:red;
+        width: 60%;
+        min-height: 30%;
+        margin-top:5%;
+        font-size: 20px;
+        color: green;
+        overflow: hidden;
+        position:relative;
+        .DeferItItem{
+            position:absolute;
+            width: 400px;
+            left:50%;
+            height: 20%;
+            bottom:3%;
+            margin-left:-200px;
+            background-color: blue;
+            .DeferItForm{
+                margin-top: 2%;
+                width: 5%;
+
+            }
+            .DeferItFormButton{
+                width: 150px;
+                height: 80px;
+                color:red;
+                position: relative;
+                top: 3%;
+            }
+        }
+
+    }
+    .DelegateItBox{
+        display:inline-block;
+        text-align:center;
+        background-color:red;
+        width: 60%;
+        min-height: 30%;
+        margin-top:5%;
+        font-size: 20px;
+        color: green;
+        overflow: hidden;
+        position:relative;
+        .DelegateItItem{
+            position:absolute;
+            width: 400px;
+            left:50%;
+            height: 40%;
+            bottom:3%;
+            margin-left:-200px;
+            background-color: blue;
+            .DelegateItForm{
+                margin-top: 2%;
+                width: 40%;
+
+            }
+            .DelegateItFormButton{
+                width: 150px;
+                height: 80px;
+                color:red;
+                position: relative;
+                top: 3%;
+            }
+        }
+
+    }
+
+}   
+
+.ReviewTab{
+    display: table;
+    height: 100%;
+    width: 100%;
+    background-color: purple;
+    text-align:center;
+    .BarGraph{
+        display:inline-block;
+        text-align:center;
+        background-color:Red;
+        width: 60%;
+        min-height: 60%;
+        margin-top:5%;
+         font-size: 20px;
+        color: blue;
+         overflow: hidden;
+        position:relative;
+    }
+    .LineGraph{
+        display:inline-block;
+        text-align:center;
+        background-color:green;
+        width: 60%;
+        min-height: 60%;
+        margin-top:5%;
+         font-size: 20px;
+        color: blue;
+         overflow: hidden;
+        position:relative;
+    }
+}

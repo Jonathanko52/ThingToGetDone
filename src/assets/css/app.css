@@ -1,152 +1,325 @@
 @font-face {
-    font-family: quest;
-    src: url(../fonts/quest.ttf);
+  font-family: quest;
+  src: url(../fonts/quest.ttf);
+}
+html {
+  min-height: 100%;
 }
 
 body {
-    margin: 0;
-    background-color:black;
-    color: rgb(112, 169, 88);
+  height: 100%;
 }
 
-.MainContainer{
-    border-style: solid;
-    border-color: red;
-    width:35%;
-    height:100vh;
-    display:flex;
-    flex-direction: column;
-    float:left;
-    padding-left:30px
-
+.MainContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  z-index: -1;
 }
 
-.MainContainerText{
-    
-
+.NavBar {
+  background-color: red;
+  height: 100vh;
+  width: 20%;
+  float: left;
 }
 
-.WeaponContainer{
-    font-size: 18px;
-    border-style: solid;
-    border-color: blue;
-    flex: 1 0 auto;
+.MainPage {
+  background-color: blue;
+  height: 100vh;
+  width: 80%;
+  float: left;
 }
 
-.WeaponContainerContents{
-    display:inline-block;
-    padding-left:30px
-
+.SubPage {
+  background-color: yellow;
+  height: 100%;
+  width: 100%;
+  max-height: auto;
 }
 
-.HelmContainer{
-    font-size: 18px;
-    border-style: solid;
-    border-color: blue;
-    flex: 1 0 auto;
+.CollectForm {
+  background-color: green;
+  height: 40%;
+  width: 70%;
+  padding-left: 10%;
+  margin-left: 10%;
+  margin-top: 5%;
+  font-size: 20px;
+  color: red;
+  overflow: hidden;
+}
+.CollectForm .CollectTextInput {
+  width: 80%;
+  height: 60%;
+  margin-top: 2%;
+}
+.CollectForm .CollectSubmitButton {
+  margin-top: 2%;
+  height: 100px;
+  width: 150px;
 }
 
-.HelmContainerContents{
-    display:inline-block;
-    padding-left:30px
-
+.ProcessTab {
+  display: table;
+  height: 100%;
+  width: 100%;
+  background-color: purple;
+  text-align: center;
+}
+.ProcessTab .CollectionBasket {
+  display: inline-block;
+  text-align: center;
+  background-color: red;
+  width: 40%;
+  min-height: 30%;
+  margin-top: 5%;
+  font-size: 20px;
+  color: blue;
+  overflow: hidden;
+  position: relative;
+}
+.ProcessTab .CollectionBasket .CollectionBasketButtons {
+  position: absolute;
+  width: 300px;
+  left: 50%;
+  bottom: 3%;
+  margin-left: -150px;
+  background-color: green;
+}
+.ProcessTab .CollectionBasket .CollectionBasketButtons button {
+  color: red;
+  height: 30px;
+}
+.ProcessTab .NonActionable {
+  display: inline-block;
+  text-align: center;
+  background-color: red;
+  width: 40%;
+  min-height: 30%;
+  margin-top: 5%;
+  font-size: 20px;
+  color: blue;
+  overflow: hidden;
+  position: relative;
+}
+.ProcessTab .NonActionable .NonActionableButtons {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  bottom: 3%;
+  margin-left: -200px;
+  background-color: green;
+}
+.ProcessTab .NonActionable .NonActionableButtons button {
+  color: red;
+  height: 30px;
+}
+.ProcessTab .Actionable {
+  display: inline-block;
+  text-align: center;
+  background-color: red;
+  width: 40%;
+  min-height: 30%;
+  margin-top: 5%;
+  font-size: 20px;
+  color: blue;
+  overflow: hidden;
+  position: relative;
+  clear: both;
+}
+.ProcessTab .Actionable .AddPlan {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  bottom: 5%;
+  margin-left: -200px;
+  background-color: green;
+  height: 90%;
+}
+.ProcessTab .Actionable .AddPlan .AddPlanInput {
+  width: 80%;
+  height: 80%;
+  margin-top: 2%;
+}
+.ProcessTab .Actionable .AddPlan .AddPlanInputButton {
+  margin-top: 2%;
+  width: 150px;
+  color: red;
+  height: 30px;
+}
+.ProcessTab .ActionNext {
+  display: inline-block;
+  text-align: center;
+  background-color: yellow;
+  width: 40%;
+  min-height: 30%;
+  margin-top: 5%;
+  font-size: 20px;
+  color: blue;
+  overflow: hidden;
+  position: relative;
+}
+.ProcessTab .ActionNext .ActionNextButtons {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  bottom: 3%;
+  margin-left: -200px;
+  background-color: green;
+}
+.ProcessTab .ActionNext .ActionNextButtons button {
+  color: red;
+  height: 30px;
 }
 
-.ChestContainer{
-    font-size: 18px;
-    border-style: solid;
-    border-color: blue;
-    flex: 1 0 auto;
+.OrganizeTab {
+  display: table;
+  height: 100%;
+  width: 100%;
+  background-color: purple;
+  text-align: center;
+}
+.OrganizeTab .DoItBox {
+  display: inline-block;
+  text-align: center;
+  background-color: yellow;
+  width: 60%;
+  min-height: 60%;
+  margin-top: 5%;
+  font-size: 20px;
+  color: blue;
+  position: relative;
+}
+.OrganizeTab .DoItBox .DoItList {
+  position: absolute;
+  width: 80%;
+  height: 60%;
+  left: 50%;
+  top: 5%;
+  margin-left: -40%;
+  background-color: red;
+  overflow: auto;
+}
+.OrganizeTab .DoItBox .DoItItem {
+  position: absolute;
+  width: 80%;
+  height: 30%;
+  left: 50%;
+  bottom: 3%;
+  margin-left: -40%;
+  background-color: green;
+}
+.OrganizeTab .DoItBox .DoItItem .DoItItemButtons {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  bottom: 3%;
+  margin-left: -200px;
+  background-color: blue;
+}
+.OrganizeTab .DoItBox .DoItItem .DoItItemButtons button {
+  color: red;
+  height: 30px;
+}
+.OrganizeTab .DeferItBox {
+  display: inline-block;
+  text-align: center;
+  background-color: red;
+  width: 60%;
+  min-height: 30%;
+  margin-top: 5%;
+  font-size: 20px;
+  color: green;
+  overflow: hidden;
+  position: relative;
+}
+.OrganizeTab .DeferItBox .DeferItItem {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  height: 20%;
+  bottom: 3%;
+  margin-left: -200px;
+  background-color: blue;
+}
+.OrganizeTab .DeferItBox .DeferItItem .DeferItForm {
+  margin-top: 2%;
+  width: 5%;
+}
+.OrganizeTab .DeferItBox .DeferItItem .DeferItFormButton {
+  width: 150px;
+  height: 80px;
+  color: red;
+  position: relative;
+  top: 3%;
+}
+.OrganizeTab .DelegateItBox {
+  display: inline-block;
+  text-align: center;
+  background-color: red;
+  width: 60%;
+  min-height: 30%;
+  margin-top: 5%;
+  font-size: 20px;
+  color: green;
+  overflow: hidden;
+  position: relative;
+}
+.OrganizeTab .DelegateItBox .DelegateItItem {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  height: 40%;
+  bottom: 3%;
+  margin-left: -200px;
+  background-color: blue;
+}
+.OrganizeTab .DelegateItBox .DelegateItItem .DelegateItForm {
+  margin-top: 2%;
+  width: 40%;
+}
+.OrganizeTab .DelegateItBox .DelegateItItem .DelegateItFormButton {
+  width: 150px;
+  height: 80px;
+  color: red;
+  position: relative;
+  top: 3%;
 }
 
-.ChestContainerContents{
-    display:inline-block;
-    padding-left:30px
-
+.ReviewTab {
+  display: table;
+  height: 100%;
+  width: 100%;
+  background-color: purple;
+  text-align: center;
 }
-.ArmContainer{
-    font-size: 18px;
-    border-style: solid;
-    border-color: blue;
-    flex: 1 0 auto;
+.ReviewTab .BarGraph {
+  display: inline-block;
+  text-align: center;
+  background-color: Red;
+  width: 60%;
+  min-height: 60%;
+  margin-top: 5%;
+  font-size: 20px;
+  color: blue;
+  overflow: hidden;
+  position: relative;
 }
-
-.ArmContainerContents{
-    display:inline-block;
-    padding-left:30px
-
-}
-
-.WaistContainer{
-    font-size: 18px;
-    border-style: solid;
-    border-color: blue;
-    flex: 1 0 auto;
-}
-
-.WaistContainerContents{
-    display:inline-block;
-    padding-left:30px
-
-}
-
-.LegContainer{
-    font-size: 18px;
-    border-style: solid;
-    border-color: blue;
-    flex: 1 0 auto;
+.ReviewTab .LineGraph {
+  display: inline-block;
+  text-align: center;
+  background-color: green;
+  width: 60%;
+  min-height: 60%;
+  margin-top: 5%;
+  font-size: 20px;
+  color: blue;
+  overflow: hidden;
+  position: relative;
 }
 
-.LegContainerContents{
-    display:inline-block;
-    padding-left:30px
-}
-
-.CharmContainer{
-    font-size: 18px;
-    border-style: solid;
-    border-color: blue;
-    flex: 1 0 auto;
-}
-
-.CharmContainerContents{
-    display:inline-block;
-    padding-left:30px
-}
-
-.DecorationContainer{
-    float:right;
-}
-
-.ResultContainer{
-    border-style: solid;
-    border-color: red;
-    width:55%;
-    height:100vh;
-    display:flex;
-    flex-direction: column;
-    float:right;
-    padding-left:30px
-
-}
-
-.AttackContainer{
-    border-style: solid;
-    border-color: blue;
-    flex: 1 0 auto;
-    padding-left:30px
-
-}
-
-.DefenseContainer{
-    border-style: solid;
-    border-color: blue;
-    flex: 1 0 auto;
-    padding-left:30px
-
-}
-
-img{
-    height:20px;
-    width:20px;
-}
+/*# sourceMappingURL=app.css.map */
