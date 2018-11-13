@@ -2,34 +2,26 @@
   font-family: quest;
   src: url(../fonts/quest.ttf);
 }
-html {
-  min-height: 100%;
-}
-
-body {
-  height: 100%;
-}
-
 .MainContainer {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  overflow: auto;
   z-index: -1;
+  height: 100%;
 }
 
 .NavBar {
   background-color: red;
-  height: 100vh;
+  height: 100%;
   width: 20%;
   float: left;
 }
 
 .MainPage {
   background-color: blue;
-  height: 100vh;
+  height: 100%;
   width: 80%;
   float: left;
 }
@@ -38,10 +30,12 @@ body {
   background-color: yellow;
   height: 100%;
   width: 100%;
-  max-height: auto;
+}
+.SubPage h1 {
+  text-align: center;
 }
 
-.CollectForm {
+.CollectTab {
   background-color: green;
   height: 40%;
   width: 70%;
@@ -52,12 +46,12 @@ body {
   color: red;
   overflow: hidden;
 }
-.CollectForm .CollectTextInput {
+.CollectTab .CollectTextInput {
   width: 80%;
   height: 60%;
   margin-top: 2%;
 }
-.CollectForm .CollectSubmitButton {
+.CollectTab .CollectSubmitButton {
   margin-top: 2%;
   height: 100px;
   width: 150px;
@@ -266,7 +260,6 @@ body {
   margin-top: 5%;
   font-size: 20px;
   color: green;
-  overflow: hidden;
   position: relative;
 }
 .OrganizeTab .DelegateItBox .DelegateItItem {
@@ -291,7 +284,6 @@ body {
 }
 
 .ReviewTab {
-  display: table;
   height: 100%;
   width: 100%;
   background-color: purple;
@@ -306,8 +298,6 @@ body {
   margin-top: 5%;
   font-size: 20px;
   color: blue;
-  overflow: hidden;
-  position: relative;
 }
 .ReviewTab .LineGraph {
   display: inline-block;
@@ -318,8 +308,33 @@ body {
   margin-top: 5%;
   font-size: 20px;
   color: blue;
-  overflow: hidden;
-  position: relative;
+}
+
+.DoTab {
+  height: 100%;
+  width: 100%;
+  background-color: purple;
+  display: flex;
+}
+.DoTab .TodayTasks {
+  float: left;
+  background-color: green;
+  width: 300px;
+  min-height: 100%;
+  font-size: 20px;
+  color: blue;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+.DoTab .TasksFromCalendar {
+  float: left;
+  background-color: green;
+  width: 300px;
+  min-height: 100%;
+  font-size: 20px;
+  color: blue;
+  margin-left: 5%;
+  margin-top: 5%;
 }
 
 /*# sourceMappingURL=app.css.map */

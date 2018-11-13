@@ -3,44 +3,42 @@
     src: url(../fonts/quest.ttf);
 }
 
-html{
-    min-height: 100%
-}
-body{
-    height: 100%
-}
+
 .MainContainer{
     position:absolute;
     top:0;
     bottom:0;
     left:0;
     right:0;
-    overflow:auto;
     z-index:-1;
+    height: 100%;
 }
 
 .NavBar{
     background-color:red;
-    height: 100vh;
+    height: 100%;
     width: 20%;
     float: left;
 }
 
 .MainPage{
     background-color:blue;
-    height: 100vh;
+    height: 100%;
     width: 80%;
     float:left;
+
 }
 
 .SubPage{
     background-color:yellow;
     height: 100%;
     width: 100%;
-    max-height: auto;
+    h1{
+        text-align:center;
+    }
 }
 
-.CollectForm{
+.CollectTab{
     background-color:green;
     height:40%;
     width: 70%;
@@ -194,6 +192,8 @@ body{
     width: 100%;
     background-color: purple;
     text-align:center;
+
+
     .DoItBox{
         display:inline-block;
         text-align:center;
@@ -281,7 +281,6 @@ body{
         margin-top:5%;
         font-size: 20px;
         color: green;
-        overflow: hidden;
         position:relative;
         .DelegateItItem{
             position:absolute;
@@ -310,11 +309,11 @@ body{
 }   
 
 .ReviewTab{
-    display: table;
     height: 100%;
     width: 100%;
     background-color: purple;
     text-align:center;
+    
     .BarGraph{
         display:inline-block;
         text-align:center;
@@ -322,10 +321,8 @@ body{
         width: 60%;
         min-height: 60%;
         margin-top:5%;
-         font-size: 20px;
+        font-size: 20px;
         color: blue;
-         overflow: hidden;
-        position:relative;
     }
     .LineGraph{
         display:inline-block;
@@ -334,9 +331,37 @@ body{
         width: 60%;
         min-height: 60%;
         margin-top:5%;
-         font-size: 20px;
+        font-size: 20px;
         color: blue;
-         overflow: hidden;
-        position:relative;
     }
 }
+
+.DoTab{
+    height: 100%;
+    width: 100%;
+    background-color: purple;
+    display:flex;
+    .TodayTasks{
+        float:left;
+        background-color:green;
+        width: 300px;
+        min-height: 100%;
+        font-size: 20px;
+        color: blue;
+        margin-left:5%;
+        margin-top:5%;
+    }
+    .TasksFromCalendar{
+        float:left;
+        background-color:green;
+        width: 300px;
+        min-height: 100%;
+        font-size: 20px;
+        color: blue;
+        margin-left:5%;
+        margin-top:5%;
+
+    }
+
+}
+
