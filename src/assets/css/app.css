@@ -46,6 +46,10 @@
   color: red;
   overflow: hidden;
 }
+.CollectTab p {
+  text-align: center;
+  margin-right: 15%;
+}
 .CollectTab .CollectTextInput {
   width: 80%;
   height: 60%;

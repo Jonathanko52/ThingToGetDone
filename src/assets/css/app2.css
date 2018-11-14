@@ -1,0 +1,144 @@
+.top-bar {
+  background-color: green;
+  height: 100px;
+}
+.top-bar h1 {
+  color: red;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.main-page .col-sm-2 {
+  background-color: red;
+  height: 100vh;
+}
+.main-page .col-sm-10 {
+  background-color: blue;
+}
+.main-page .CollectTextForm {
+  background-color: yellow;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  margin-top: 100px;
+}
+
+.ProcessTab .CollectionBasket {
+  text-align: center;
+  background-color: yellow;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  margin-top: 100px;
+}
+.ProcessTab .CollectionBasketButtons {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  bottom: 3%;
+  margin-left: -50%;
+}
+.ProcessTab .NonActionable {
+  text-align: center;
+  background-color: yellow;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  margin-top: 100px;
+}
+.ProcessTab .NonActionableButtons {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  bottom: 3%;
+  margin-left: -50%;
+}
+.ProcessTab .Actionable {
+  text-align: center;
+  background-color: yellow;
+  margin-left: auto;
+  margin-right: auto;
+  height: 120px;
+  margin-top: 100px;
+}
+.ProcessTab .Actionable .AddPlanInput {
+  height: 40px;
+}
+.ProcessTab .ActionNext {
+  text-align: center;
+  background-color: yellow;
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  margin-top: 100px;
+}
+.ProcessTab .ActionNextButtons {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  bottom: 3%;
+  margin-left: -50%;
+}
+
+.DoItBox {
+  text-align: center;
+  background-color: yellow;
+  margin-left: auto;
+  margin-right: auto;
+  height: 600px;
+  margin-top: 100px;
+}
+
+.DoItList {
+  position: absolute;
+  width: 80%;
+  height: 60%;
+  left: 50%;
+  top: 5%;
+  margin-left: -40%;
+  background-color: red;
+  overflow: auto;
+}
+
+.DoItItem {
+  position: absolute;
+  width: 80%;
+  height: 30%;
+  left: 50%;
+  bottom: 3%;
+  margin-left: -40%;
+  background-color: green;
+}
+.DoItItem .DoItItemButtons {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  bottom: 3%;
+  margin-left: -200px;
+  background-color: blue;
+}
+
+.DeferItBox {
+  text-align: center;
+  background-color: yellow;
+  margin-left: auto;
+  margin-right: auto;
+  height: 600px;
+  margin-top: 100px;
+}
+.DeferItBox .DeferItItem {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  height: 20%;
+  bottom: 3%;
+  margin-left: -200px;
+}
+.DeferItBox .DeferItItem .DeferItForm {
+  margin-top: 2%;
+  width: 8%;
+}
+
+/*# sourceMappingURL=app2.css.map */

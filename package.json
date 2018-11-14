@@ -7,7 +7,8 @@
     "start": "node dev_server.js",
     "bundle": "webpack --config webpack.prod.js --progress",
     "test": "jest",
-    "css": "sass ./src/assets/css/app.scss ./src/assets/css/app.css"
+    "css": "sass ./src/assets/css/app2.scss ./src/assets/css/app2.css"
+
   },
   "author": "Jonathan Ko",
   "license": "ISC",
