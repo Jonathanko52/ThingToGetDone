@@ -8,7 +8,6 @@
     "bundle": "webpack --config webpack.prod.js --progress",
     "test": "jest",
     "css": "sass ./src/assets/css/app2.scss ./src/assets/css/app2.css"
-
   },
   "author": "Jonathan Ko",
   "license": "ISC",
@@ -20,7 +19,8 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -45,6 +45,7 @@
     "jest": "^23.6.0",
     "postcss-loader": "^3.0.0",
     "react-hot-loader": "^4.3.11",
+    "redux-devtools-extension": "^2.13.5",
     "sass": "^1.14.3",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.0.1",

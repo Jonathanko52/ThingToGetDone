@@ -344,15 +344,12 @@
 }
 
 .DoTab{
-    height: 100%;
-    width: 100%;
-    background-color: purple;
-    display:flex;
+
     .TodayTasks{
         float:left;
         background-color:green;
         width: 300px;
-        min-height: 100%;
+        min-height: 80%;
         font-size: 20px;
         color: blue;
         margin-left:5%;
@@ -362,7 +359,7 @@
         float:left;
         background-color:green;
         width: 300px;
-        min-height: 100%;
+        min-height: 80%;
         font-size: 20px;
         color: blue;
         margin-left:5%;

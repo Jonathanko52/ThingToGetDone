@@ -17,100 +17,259 @@
     <div class="row top-bar" >
         <h1>Getting Things Done</h1>
     </div>
-    <div class="row main-page">
-      <div class="col-sm-2">.col-sm-2</div>
+    <div class="row no-gutters main-page">
+      <div class="col-sm-2 NavBar ">
+          Collect
+          Process
+            -Actionable/NonActionable
+            -Nonactionable
+            -Actionable
+          Organize
+            -Do it  
+            -Delegate it    
+            -Defer it
+          Review
+            -Bar
+            -Line
+          Do
+            -Today Tasks
+            -Tasks From Calendar
+      </div>
       <div class="col-sm-10">
-          <!-- <div class="row CollectTab">
+          <div class="row CollectTab">
             <div class="col-sm-6 CollectTextForm">
                 <div class="form-group">
-                    <label class="align-middle"for="TaskCollection">Input Task</label>
-                    <textarea class="form-control" rows="8" id="TaskCollection"></textarea>
-                    <input type="submit" class="btn btn-info" value="Submit">
+                    <h3>Input Task</h3>
+                    <textarea class="form-control" rows="4" id="TaskCollection"></textarea>
+                    <input type="submit" class="btn-default TaskCollectionButton" value="Submit">
                 </div>
             </div>
-          </div> -->
+            <div class="col-sm-6 CollectedList">
 
-        <div class="ProcessTab">        
-            <!-- <div class='col-sm-6 CollectionBasket'>
-                <br>
-                <h3>Collection Basket</h3>
-                <br>
-                <div class='CollectionBasketButtons'>
-                    <button class="btn">Actionable</button>
-                    <button class="btn">UnActionable</button>
+            </div>
+          </div>
+
+        <!-- <div class="ProcessTab">        
+            <div class='col-sm-12 CollectionBasket'>
+                <div class='CollectionBasketItem'>
+                    <br>
+                    <h3>Collection Basket Item</h3>
+                    <br>
+                    <div class='CollectionBasketButtons'>
+                        <button class="btn-default">Actionable</button>
+                        <button class="btn-default">UnActionable</button>
+                    </div>
                 </div>
             </div> -->
-            <!-- <div class='col-sm-6 NonActionable'>
+            <!-- <div class='col-sm-12 NonActionable'>
                 <h3>NonActionable?</h3>
-                <div class='NonActionableButtons'>
-                <button class="btn">
-                    Eliminate 
-                </button>
-                <button class="btn">
-                    Store for Incubation
-                </button>
-                <button class="btn">
-                    Store For Reference
-                </button>
+                <div class='NonActionableItem'>
+                    <div class='NonActionableButtons'>
+                        <button class="btn-default">
+                            Eliminate 
+                        </button>
+                        <button class="btn-default">
+                            Store for Incubation
+                        </button>
+                        <button class="btn-default">
+                            Store For Reference
+                        </button>
+                    </div>
                 </div>
             </div> -->
-                <!-- <div class='col-sm-6 Actionable'>
+                <!-- <div class='col-sm-6 ActionableList'>
+                    <h3>Actionable List</h3>
+
+                    
+                </div>
+                <div class='col-sm-6 Actionable'>
                   <div class="form-group AddPlan">
                         <label class="align-middle"for="AddPlan">What's the next step for this action?</label>
                         <textarea class="form-control AddPlanInput" rows="7" id="AddPlan"></textarea>
-                        <input type="submit" class="btn AddPlanInputButton" value="Submit">
-                  </div>
-                </div>
-                <br>
-                <div class='col-sm-6 ActionNext'>
-                  <div class='ActionNextButtons'>
-                    <button class="btn">Do it</button>
-                    <button class="btn">Defer it</button>
-                    <button class="btn">Delegate it</button>
+                        <input type="submit" class="btn-default AddPlanInputButton" value="Submit">   
+                        <br>
+                        <div class='ActionNextButtons'>                
+                            <button class="btn-default">Do it</button>
+                            <button class="btn-default">Defer it</button>
+                            <button class="btn-default">Delegate it</button>
+                        </div> 
                   </div>
                 </div> -->
-            <div class='OrganizeTab'>
-                    <!-- <div class='col-sm-6 DoItBox'>
+            <!-- </div> -->
+
+            <!-- <div class='OrganizeTab'>
+                    <div class='col-sm-12 DoItBox'>
                           <h3>BLARGH</h3>
-                        <div class='DoItList'>
-                            Do it Item
-                        </div>
-                        <div class='DoItItem'>
-                            2:00
+                        <div class='DoItList col-sm-6'>
+                            <h4>Do it Items</h4>
                             <div class='DoItItemButtons'>
-                                <button class="btn">Start</button>
-                                <button class="btn">Stop</button>
+                                <button class="btn-default">Do it later</button>
+                                <button class="btn-default">Do it later</button>
+                            </div>
+                        </div>
+                        <div class='DoItItem col-sm-6'>
+                            <h4>2:00</h4>
+                            <div class='DoItItemButtons'>
+                                <button class="btn-default">Start</button>
+                                <button class="btn-default">Stop</button>
                             </div>
                         </div>
                     </div> -->
-                    <div class='col-sm-6 DeferItBox'>
+                    <!-- <div class='col-sm-12 DeferItBox'>
                         <h3>Defer it</h3>
                           <div class="form-group DeferItItem">
-                            Year<input class='DeferItForm'>
-                            Month<input class='DeferItForm'>
-                            Day<input class='DeferItForm'>
-                            Hour<input class='DeferItForm'>
-                            Minute<input class='DeferItForm'>
-                            <input class='DeferItFormButton btn'type='submit'>
+                              <div class='DeferItItemBottom'>
+                                Year<input class='DeferItForm'>
+                                Month<input class='DeferItForm'>
+                                Day<input class='DeferItForm'>
+                                Hour<input class='DeferItForm'>
+                                Minute<input class='DeferItForm'>
+
+                                <br>
+                                <input class='DeferItFormButton btn-default'type='submit'>
+                              </div>
                           </div>
-                    </div>
-                    <!-- <div class="DelegateItBox">
-                      Delegate It
-                        <form class='DelegateItItem'>
-                            Contact Name<input class='DelegateItForm'>
-                            <br>
-                            Email<input class='DelegateItForm'>
-                            <br>
-                            Phone<input class='DelegateItForm'>
-                            <br>
-                            <input class='DeferItFormButton 'type='submit'>
-                        </form>
                     </div> -->
-            </div>
+                    <!-- <div class="DelegateItBox col-sm-12">
+                        <h3 class="align-middle ">Delegate It</h3>
+                        <div class="form-group DelegateItItem">
+                            <div class='DelegateItItemBottom'>
+                                <input class='DelegateItForm' value='Contact Name'>
+                                <br>
+                                <input class='DelegateItForm' value='Email'>
+                                <br>
+                                <input class='DelegateItForm' value='Phone'>
+                                <br>
+                                <input class='DelegateItFormButton btn-default'type='submit'>
+                            </div>    
+                        </div>
+                       
+                    </div> -->
+            <!-- </div> -->
+            <!-- <div class='ReviewTab'>                 -->
+                        <!-- <div class='BarGraph col-sm-12'>
+                            <h3 class="align-middle ">Bar Chart</h3>
+
+                          Bar Graph
+                          <li>Items Collected</li>
+                          <li>Items Eliminated</li>
+                          <li>Items Incubated</li>
+                          <li>Items Stored for Reference</li>
+                          <li>Items Accomplished</li>
+                          <li>Items Delegated</li>
+                          <li>Items Deferred</li>
+                          <li>Items Completed Today</li>
+                          <li>Items Uncompleted</li>
+                        </div> -->
+                        <!-- <div class="LineGraph col-sm-12">
+                          <h3 class="align-middle ">Line Chart</h3>
+                        </div> -->
+            <!-- </div> -->
 
 
+            <!-- <div class='DoTab'>
+                <div class='TodayTasks col-sm-6'>
+                    <h3 class="align-middle">Today Tasks</h3>
+                    <table class='table Tables'>
 
-            </div>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h5 class='Task'>Sample Item</h5>
+                                        <ol>
+                                        <li class='TaskAction'>Action 1 <button class='btn-default TaskActionButton'>Done</button></li>
+                                        <li class='TaskAction'>Action 2 <button class='btn-default TaskActionButton'>Done</button></li>
+                                        <li class='TaskAction'>Extra Action <button class='btn-default TaskActionButton'>Done</button></li>
+                                        </ol> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                        <td>
+                                            <h5 class='Task'>Sample Item</h5>
+                                            <ol>
+                                            <li class='TaskAction'>Action 1 <button class='btn-default TaskActionButton'>Done</button></li>
+                                            <li class='TaskAction'>Action 2 <button class='btn-default TaskActionButton'>Done</button></li>
+                                            <li class='TaskAction'>Extra Action <button class='btn-default TaskActionButton'>Done</button></li>
+                                            </ol> 
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td>
+                                            <h5 class='Task'>Sample Item</h5>
+                                            <ol>
+                                            <li class='TaskAction'>Action 1 <button class='btn-default TaskActionButton'>Done</button></li>
+                                            <li class='TaskAction'>Action 2 <button class='btn-default TaskActionButton'>Done</button></li>
+                                            <li class='TaskAction'>Extra Action <button class='btn-default TaskActionButton'>Done</button></li>
+                                            </ol> 
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5 class='Task'>Sample Item</h5>
+                                        <ol>
+                                        <li class='TaskAction'>Action 1 <button class='btn-default TaskActionButton'>Done</button></li>
+                                        <li class='TaskAction'>Action 2 <button class='btn-default TaskActionButton'>Done</button></li>
+                                        <li class='TaskAction'>Extra Action <button class='btn-default TaskActionButton'>Done</button></li>
+                                        </ol> 
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                    </table>
+                </div>
+                <div class='TasksFromCalendar col-sm-6'>
+                        <h3 class="align-middle">Today Tasks</h3>
+                        <table class='table Tables'>
+                                <thead>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h5 class='Task'>Sample Item</h5>
+                                            <ol>
+                                            <li class='TaskAction'>Action 1 <button class='btn-default TaskActionButton'>Done</button></li>
+                                            <li class='TaskAction'>Action 2 <button class='btn-default TaskActionButton'>Done</button></li>
+                                            <li class='TaskAction'>Extra Action <button class='btn-default TaskActionButton'>Done</button></li>
+                                            </ol> 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                            <td>
+                                                <h5 class='Task'>Sample Item</h5>
+                                                <ol>
+                                                <li class='TaskAction'>Action 1 <button class='btn-default TaskActionButton'>Done</button></li>
+                                                <li class='TaskAction'>Action 2 <button class='btn-default TaskActionButton'>Done</button></li>
+                                                <li class='TaskAction'>Extra Action <button class='btn-default TaskActionButton'>Done</button></li>
+                                                </ol> 
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                            <td>
+                                                <h5 class='Task'>Sample Item</h5>
+                                                <ol>
+                                                <li class='TaskAction'>Action 1 <button class='btn-default TaskActionButton'>Done</button></li>
+                                                <li class='TaskAction'>Action 2 <button class='btn-default TaskActionButton'>Done</button></li>
+                                                <li class='TaskAction'>Extra Action <button class='btn-default TaskActionButton'>Done</button></li>
+                                                </ol> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>
+                                                    <h5 class='Task'>Sample Item</h5>
+                                                    <ol>
+                                                    <li class='TaskAction'>Action 1 <button class='btn-default TaskActionButton'>Done</button></li>
+                                                    <li class='TaskAction'>Action 2 <button class='btn-default TaskActionButton'>Done</button></li>
+                                                    <li class='TaskAction'>Extra Action <button class='btn-default TaskActionButton'>Done</button></li>
+                                                    </ol> 
+                                                </td>
+                                            </tr>
+                                </tbody>
+    
+                        </table>
+
+                </div>
+            </div> -->
+
             
         </div>
       </div>

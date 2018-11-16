@@ -1,37 +1,71 @@
 .top-bar {
-  background-color: green;
+  background-color: #45d1e1;
   height: 100px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #b5b5b5;
+  color: white;
 }
 .top-bar h1 {
-  color: red;
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.main-page .col-sm-2 {
-  background-color: red;
-  height: 100vh;
-}
-.main-page .col-sm-10 {
+.main-page {
   background-color: blue;
 }
+.main-page .col-sm-10 {
+  min-height: 100vh;
+  float: left;
+}
 .main-page .CollectTextForm {
-  background-color: yellow;
-  margin-left: auto;
-  margin-right: auto;
-  height: 300px;
-  margin-top: 100px;
+  padding-top: 10px;
+  text-align: center;
+  font-family: Consolas;
+  background-color: white;
+  color: black;
+  height: 100vh;
+  overflow: auto;
+  float: left;
+  border-color: #b5b5b5;
+  border-right-style: solid;
+  border-width: 1px;
+}
+.main-page .CollectTextForm .TaskCollectionButton {
+  margin-top: 10px;
+}
+.main-page .CollectedList {
+  padding-top: 10px;
+  text-align: center;
+  font-family: Consolas;
+  background-color: white;
+  color: black;
+  height: 100vh;
+  overflow: auto;
+  float: left;
 }
 
 .ProcessTab .CollectionBasket {
+  padding-top: 10px;
   text-align: center;
-  background-color: yellow;
-  margin-left: auto;
-  margin-right: auto;
+  font-family: Consolas;
+  background-color: white;
+  color: black;
+  height: 100vh;
+  overflow: auto;
+}
+.ProcessTab .CollectionBasketItem {
+  border-style: inset;
+  border-color: black;
+  border-width: 1px;
+  position: relative;
+  width: 400px;
   height: 300px;
-  margin-top: 100px;
+  margin-left: 30px;
+  margin-top: 30px;
+  float: left;
 }
 .ProcessTab .CollectionBasketButtons {
   position: absolute;
@@ -41,12 +75,24 @@
   margin-left: -50%;
 }
 .ProcessTab .NonActionable {
+  padding-top: 10px;
   text-align: center;
-  background-color: yellow;
-  margin-left: auto;
-  margin-right: auto;
+  font-family: Consolas;
+  background-color: white;
+  color: black;
+  height: 100vh;
+  overflow: auto;
+}
+.ProcessTab .NonActionableItem {
+  border-style: inset;
+  border-color: black;
+  border-width: 1px;
+  position: relative;
+  width: 400px;
   height: 300px;
-  margin-top: 100px;
+  margin-left: 30px;
+  margin-top: 30px;
+  float: left;
 }
 .ProcessTab .NonActionableButtons {
   position: absolute;
@@ -55,90 +101,220 @@
   bottom: 3%;
   margin-left: -50%;
 }
-.ProcessTab .Actionable {
+.ProcessTab .ActionableList {
+  padding-top: 10px;
   text-align: center;
-  background-color: yellow;
-  margin-left: auto;
-  margin-right: auto;
-  height: 120px;
-  margin-top: 100px;
+  font-family: Consolas;
+  background-color: white;
+  color: black;
+  height: 100vh;
+  overflow: auto;
+  float: left;
+  border-color: #b5b5b5;
+  border-right-style: solid;
+  border-width: 1px;
+}
+.ProcessTab .Actionable {
+  padding-top: 10px;
+  text-align: center;
+  font-family: Consolas;
+  background-color: white;
+  color: black;
+  height: 100vh;
+  overflow: auto;
+  float: left;
 }
 .ProcessTab .Actionable .AddPlanInput {
   height: 40px;
 }
-.ProcessTab .ActionNext {
-  text-align: center;
-  background-color: yellow;
-  margin-left: auto;
-  margin-right: auto;
-  height: 400px;
-  margin-top: 100px;
+.ProcessTab .Actionable .AddPlanInputButton {
+  margin-top: 10px;
 }
 .ProcessTab .ActionNextButtons {
-  position: absolute;
-  width: 100%;
-  left: 50%;
-  bottom: 3%;
-  margin-left: -50%;
+  margin-top: 10px;
 }
 
 .DoItBox {
+  padding-top: 10px;
   text-align: center;
-  background-color: yellow;
-  margin-left: auto;
-  margin-right: auto;
-  height: 600px;
-  margin-top: 100px;
-}
-
-.DoItList {
-  position: absolute;
-  width: 80%;
-  height: 60%;
-  left: 50%;
-  top: 5%;
-  margin-left: -40%;
-  background-color: red;
+  font-family: Consolas;
+  background-color: white;
+  color: black;
+  height: 100vh;
   overflow: auto;
 }
 
+.DoItList {
+  padding-top: 10px;
+  text-align: center;
+  font-family: Consolas;
+  background-color: white;
+  border-color: #b5b5b5;
+  border-top-style: solid;
+  border-width: 1px;
+  height: 100vh;
+  overflow: auto;
+  float: left;
+}
+
 .DoItItem {
-  position: absolute;
-  width: 80%;
-  height: 30%;
-  left: 50%;
-  bottom: 3%;
-  margin-left: -40%;
-  background-color: green;
+  padding-top: 10px;
+  text-align: center;
+  font-family: Consolas;
+  background-color: white;
+  height: 100vh;
+  overflow: auto;
+  border-left-style: solid;
+  border-top-style: solid;
+  border-color: #b5b5b5;
+  border-width: 1px;
+  float: left;
 }
 .DoItItem .DoItItemButtons {
   position: absolute;
   width: 400px;
   left: 50%;
-  bottom: 3%;
+  margin-top: 10px;
   margin-left: -200px;
-  background-color: blue;
 }
 
 .DeferItBox {
+  padding-top: 10px;
   text-align: center;
-  background-color: yellow;
-  margin-left: auto;
-  margin-right: auto;
-  height: 600px;
-  margin-top: 100px;
+  font-family: Consolas;
+  background-color: white;
+  color: black;
+  height: 100vh;
+  overflow: auto;
 }
 .DeferItBox .DeferItItem {
-  position: absolute;
+  border-style: inset;
+  border-color: black;
+  border-width: 1px;
+  position: relative;
   width: 400px;
-  left: 50%;
-  height: 20%;
-  bottom: 3%;
-  margin-left: -200px;
+  height: 300px;
+  margin-left: 30px;
+  margin-top: 30px;
+  float: left;
+}
+.DeferItBox .DeferItItem .DeferItItemBottom {
+  position: absolute;
+  bottom: 7px;
+  width: 398px;
 }
 .DeferItBox .DeferItItem .DeferItForm {
   margin-top: 2%;
   width: 8%;
+}
+.DeferItBox .DeferItItem .DeferItFormButton {
+  position: relative;
+  margin-top: 10px;
+}
+
+.DelegateItBox {
+  padding-top: 10px;
+  text-align: center;
+  font-family: Consolas;
+  background-color: white;
+  color: black;
+  height: 100vh;
+  overflow: auto;
+}
+.DelegateItBox .DelegateItItem {
+  border-style: inset;
+  border-color: black;
+  border-width: 1px;
+  position: relative;
+  width: 400px;
+  height: 300px;
+  margin-left: 30px;
+  margin-top: 30px;
+  float: left;
+}
+.DelegateItBox .DelegateItItem .DelegateItItemBottom {
+  position: absolute;
+  bottom: 5px;
+  width: 398px;
+}
+.DelegateItBox .DelegateItItem .DelegateItForm {
+  margin-top: 5px;
+  width: 40%;
+}
+.DelegateItBox .DelegateItItem .DelegateItForm input {
+  width: 100%;
+  clear: both;
+}
+.DelegateItBox .DelegateItItem .DelegateItFormButton {
+  position: relative;
+  margin-top: 10px;
+}
+
+.BarGraph {
+  padding-top: 10px;
+  text-align: center;
+  font-family: Consolas;
+  background-color: white;
+  color: black;
+  height: 100vh;
+  overflow: auto;
+  float: left;
+}
+
+.LineGraph {
+  padding-top: 10px;
+  text-align: center;
+  font-family: Consolas;
+  background-color: white;
+  color: black;
+  height: 100vh;
+  overflow: auto;
+  float: left;
+}
+
+.DoTab .TodayTasks {
+  padding-top: 10px;
+  text-align: center;
+  font-family: Consolas;
+  background-color: white;
+  height: 100vh;
+  overflow: auto;
+  float: left;
+}
+.DoTab .TasksFromCalendar {
+  padding-top: 10px;
+  text-align: center;
+  font-family: Consolas;
+  background-color: white;
+  height: 100vh;
+  overflow: auto;
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: #b5b5b5;
+  float: left;
+}
+
+.NavBar {
+  background-color: #a2d4da;
+  color: black;
+  border-right-style: solid;
+  border-width: 1px;
+  border-color: #b5b5b5;
+  float: left;
+  text-indent: 5px;
+  padding-top: 20px;
+  line-height: 20px;
+}
+
+.Tables {
+  width: 100%;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.TaskActionButton {
+  margin-left: 5px;
+  height: 25px;
 }
 
 /*# sourceMappingURL=app2.css.map */
