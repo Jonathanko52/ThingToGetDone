@@ -1,371 +1,400 @@
-@font-face {
-    font-family: quest;
-    src: url(../fonts/quest.ttf);
+html{
+  font:Tahoma;
+  ul{
+    list-style-type: none;
+  }
+  li{
+    list-style-type: none;
+  }
 }
 
-
-.MainContainer{
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    z-index:-1;
-    height: 100%;
-}
-
-.NavBar{
-    background-color:red;
-    height: 100%;
-    width: 20%;
-    float: left;
-}
-
-.MainPage{
-    background-color:blue;
-    height: 100%;
-    width: 80%;
-    float:left;
-
-}
-
-.SubPage{
-    background-color:yellow;
-    height: 100%;
-    width: 100%;
+.top-bar{
+    background-color:rgb(69, 209, 225);
+    height: 100px;
+    border-style:solid;
+    border-width: 1px;
+    border-color:rgb(181, 181, 181);
+    color:white;
     h1{
-        text-align:center;
+        margin-left: auto;
+        margin-right:auto;
+        margin-top:auto;
+        margin-bottom:auto;
     }
 }
 
-.CollectTab{
-    background-color:green;
-    height:40%;
-    width: 70%;
-    padding-left:10%;
-    margin-left: 10%;
-    margin-top:5%;
-    font-size: 20px;
-    color: red;
-    overflow: hidden;
-    p{
-        text-align:center;
-        margin-right:15%;
-    }
-    textarea{
-        
-    }
-    .CollectTextInput{
-        width:80%;
-        height:60%;
-        margin-top:2%;
-    }
 
-    .CollectSubmitButton{
-        margin-top:2%;
-        height: 100px;
-        width: 150px;
+.main-page{
+  background-color:blue;
+  .col-sm-10{
+    min-height:100vh;
+    float:left;
+  }
+  .CollectTab{
+    padding-top:10px;
+    text-align:center;
+    font-family:Consolas;
+    background-color:white;
+    color: rgb(106, 106, 106);
+    height:100vh;
+    overflow:auto;
+    .CollectTextForm{
+      padding-top:10px;
+      text-align:center;
+      font-family:Consolas;
+      background-color:white;
+      color: rgb(106, 106, 106);
+      height:100vh;
+      overflow:auto;
+      float:left;
+      border-color:rgb(181, 181, 181);
+      border-right-style:solid;
+      border-width: 1px;
+      .TaskCollectionButton{
+        margin-top:10px;
+      }
     }
-
+    .CollectedList{
+      padding-top:10px;
+      text-align:center;
+      font-family:Consolas;
+      background-color:white;
+      color: rgb(106, 106, 106);
+      height:100vh;
+      overflow:auto;
+      float:left;
+    }
+  }
 }
-
-
 .ProcessTab{
-    display: table;
-    height: 100%;
-    width: 100%;
-    background-color: purple;
+  padding-top:10px;
+  text-align:center;
+  font-family:Consolas;
+  background-color:white;
+  color: rgb(106, 106, 106);
+  height:100vh;
+  overflow:auto;
+  .CollectionBasket{
+    padding-top:10px;
     text-align:center;
+    font-family:Consolas;
+    background-color:white;
+    color: rgb(106, 106, 106);
+    height:100vh;
+    overflow:auto;
+  }
+  .CollectionBasketItem{
+    border-style:inset;
+    border-color:rgb(181, 181, 181);
+    border-width:1px;
+    position:relative;
+    width: 400px;
+    height: 300px;
+    margin-left: 30px;
+    margin-top: 30px;
+    float:left;
+    border-radius:10px;
 
-    .CollectionBasket{
-        display:inline-block;
-        text-align:center;
-        background-color:red;
-        width: 40%;
-        min-height: 30%;
-        margin-top:5%;
-        font-size: 20px;
-        color: blue;
-        overflow: hidden;
-        position:relative;
-        .CollectionBasketButtons{
-            position:absolute;
-            width: 300px;
-            left:50%;
-            bottom:3%;
-            margin-left:-150px;
-            background-color: green;
-
-
-            button{
-                color:red;
-                height: 30px;
-            }
-        }
-    }
-    .NonActionable{
-        display:inline-block;
-        text-align:center;
-        background-color:red;
-        width: 40%;
-        min-height: 30%;
-        margin-top:5%;
-        font-size: 20px;
-        color: blue;
-        overflow: hidden;
-        position:relative;
-        .NonActionableButtons{
-            position:absolute;
-            width: 400px;
-            left:50%;
-            bottom:3%;
-            margin-left:-200px;
-            background-color: green;
-
-
-            button{
-                color:red;
-                height: 30px;
-            }
-        }
-    }
-    .Actionable{
-        display:inline-block;
-        text-align:center;
-        background-color:red;
-        width: 40%;
-        min-height: 30%;
-        margin-top:5%;
-        font-size: 20px;
-        color: blue;
-        overflow: hidden;
-        position:relative;
-        clear:both;
-        .AddPlan{
-            position:absolute;
-            width: 400px;
-            left:50%;
-            bottom:5%;
-            margin-left:-200px;
-            background-color: green;
-            height:90%;
-            .AddPlanInput{
-                width:80%;
-                height:80%;
-                margin-top:2%;
-            }
-            .AddPlanInputButton{
-                margin-top:2%;
-                width: 150px;
-                color:red;
-                height: 30px;
-            }
-        }    
+  }
+  .CollectionBasketButtons{
+    position:absolute;
+    width: 100%;
+    left:50%;
+    bottom:3%;
+    margin-left:-50%;
+  }
+  .NonActionable{
+    padding-top:10px;
+    text-align:center;
+    font-family:Consolas;
+    background-color:white;
+    color: rgb(106, 106, 106);
+    height:100vh;
+    overflow:auto;
+  }
+  .NonActionableItem{
+    border-style:inset;
+    border-color:rgb(181, 181, 181);
+    border-width:1px;
+    position:relative;
+    width: 400px;
+    height: 300px;
+    margin-left: 30px;
+    margin-top: 30px;
+    float:left;
+    border-radius:10px;
+  }
+  .NonActionableButtons{
+    position:absolute;
+    width: 100%;
+    left:50%;
+    bottom:3%;
+    margin-left:-50%;
+  }
+  .ActionableList{
+    padding-top:10px;
+    text-align:center;
+    font-family:Consolas;
+    background-color:white;
+    color: rgb(106, 106, 106);
+    height:100vh;
+    overflow:auto;
+    float:left;
+    border-color:rgb(181, 181, 181);
+    border-right-style:solid;
+    border-width: 1px;
+  }
+  .Actionable{
+    padding-top:10px;
+    text-align:center;
+    font-family:Consolas;
+    background-color:white;
+    color: rgb(106, 106, 106);
+    height:100vh;
+    overflow:auto;
+    float:left;
+    .AddPlanInput{
+      height:40px;
 
     }
-
-
-    .ActionNext{
-        display:inline-block;
-        text-align:center;
-        background-color:yellow;
-        width: 40%;
-        min-height: 30%;
-        margin-top:5%;
-        font-size: 20px;
-        color: blue;
-        overflow: hidden;
-        position:relative;
-        .ActionNextButtons{
-            position:absolute;
-            width: 400px;
-            left:50%;
-            bottom:3%;
-            margin-left:-200px;
-            background-color: green;
-
-            button{
-                color:red;
-                height: 30px;
-            }
-        }
+    .AddPlanInputButton{
+      margin-top:10px;
     }
+  }
+  .ActionNextButtons{
+    margin-top:10px;
+  }
 }
 
+.DoItBox{
+  padding-top:10px;
+  text-align:center;
+  font-family:Consolas;
+  background-color:white;
+  color: rgb(106, 106, 106);
+  height:100vh;
+  overflow:auto;
+}
+.DoItList{
+  padding-top:10px;
+  text-align:center;
+  font-family:Consolas;
+  background-color:white;
+  border-color:rgb(181, 181, 181);
+  border-top-style:solid;
+  border-width: 1px;
+  height:100vh;
+  overflow:auto;
+  float:left;
+}
+.DoItItem{
+  padding-top:10px;
+  text-align:center;
+  font-family:Consolas;
+  background-color:white;
+  height:100vh;
+  overflow:auto;
+  border-left-style:solid;
+  border-top-style:solid;
+  border-color:rgb(181, 181, 181);
+  border-width: 1px;
+  float:left;
+  border-radius:10px;
 
+
+  .DoItItemButtons{
+      position:absolute;
+      width: 400px;
+      left:50%;
+      margin-top: 10px;
+      margin-left:-200px;
+
+  }
+}
 .OrganizeTab{
-    display: table;
-    height: 100%;
-    width: 100%;
-    background-color: purple;
+  padding-top:10px;
+  text-align:center;
+  font-family:Consolas;
+  background-color:white;
+  color: rgb(106, 106, 106);
+  height:100vh;
+  overflow:auto;
+  .DeferItBox{
+    padding-top:10px;
     text-align:center;
+    font-family:Consolas;
+    background-color:white;
+    color: rgb(106, 106, 106);
+    height:100vh;
+    overflow:auto;
+    .DeferItItem{
+      border-style:inset;
+      border-color:rgb(181, 181, 181);
+      border-width:1px;
+      position:relative;
+      width: 400px;
+      height: 300px;
+      margin-left: 30px;
+      margin-top: 30px;
+      float:left;
+      border-radius:10px;
 
-
-    .DoItBox{
-        display:inline-block;
-        text-align:center;
-        background-color:yellow;
-        width: 60%;
-        min-height: 60%;
-        margin-top:5%;
-        font-size: 20px;
-        color: blue;
-        position:relative;
-
-        .DoItList{
-            position:absolute;
-            width: 80%;
-            height: 60%;
-            left:50%;
-            top: 5%;
-            margin-left:-40%;
-            background-color: red;
-            overflow:auto;
+      .DeferItItemBottom{
+        position: absolute;
+        bottom:7px;
+        width: 398px;
+        input{
+          margin:5px;
         }
-        .DoItItem{
-            position:absolute;
-            width: 80%;
-            height: 30%;
-            left:50%;
-            bottom:3%;
-            margin-left:-40%;
-            background-color: green;
-            .DoItItemButtons{
-                position:absolute;
-                width: 400px;
-                left:50%;
-                bottom:3%;
-                margin-left:-200px;
-                background-color: blue;
-                button{
-                    color:red;
-                    height: 30px;
-                }
-            }
-        }
-            
+      }
+      .DeferItForm{
+        margin-top: 2%;
+        width: 8%;
+        
+      }
+      .DeferItFormButton{
+        position: relative;
+        margin-top:10px;
+      }
     }
-    .DeferItBox{
-        display:inline-block;
-        text-align:center;
-        background-color:red;
-        width: 60%;
-        min-height: 30%;
-        margin-top:5%;
-        font-size: 20px;
-        color: green;
-        overflow: hidden;
-        position:relative;
-        .DeferItItem{
-            position:absolute;
-            width: 400px;
-            left:50%;
-            height: 20%;
-            bottom:3%;
-            margin-left:-200px;
-            background-color: blue;
-            .DeferItForm{
-                margin-top: 2%;
-                width: 5%;
+  }
 
-            }
-            .DeferItFormButton{
-                width: 150px;
-                height: 80px;
-                color:red;
-                position: relative;
-                top: 3%;
-            }
-        }
+  .DelegateItBox{
+    padding-top:10px;
+    text-align:center;
+    font-family:Consolas;
+    background-color:white;
+    color: rgb(106, 106, 106);
+    height:100vh;
+    overflow:auto;
+    .DelegateItItem{
+      border-style:inset;
+      border-color:rgb(181, 181, 181);
+      border-width:1px;
+      position:relative;
+      width: 400px;
+      height: 300px;
+      margin-left: 30px;
+      margin-top: 30px;
+      float:left;
+      border-radius:10px;
 
+      .DelegateItItemBottom{
+        position: absolute;
+        bottom:5px;
+        width: 398px;
+      }
+      .DelegateItForm{
+          margin-top: 5px;
+          width: 40%;     
+          input{
+            width: 100%;
+            clear: both;
+          }
+      }
+      .DelegateItFormButton{
+          position: relative;
+          margin-top:10px;
+      }
     }
-    .DelegateItBox{
-        display:inline-block;
-        text-align:center;
-        background-color:red;
-        width: 60%;
-        min-height: 30%;
-        margin-top:5%;
-        font-size: 20px;
-        color: green;
-        position:relative;
-        .DelegateItItem{
-            position:absolute;
-            width: 400px;
-            left:50%;
-            height: 40%;
-            bottom:3%;
-            margin-left:-200px;
-            background-color: blue;
-            .DelegateItForm{
-                margin-top: 2%;
-                width: 40%;
-
-            }
-            .DelegateItFormButton{
-                width: 150px;
-                height: 80px;
-                color:red;
-                position: relative;
-                top: 3%;
-            }
-        }
-
-    }
-
-}   
-
+  }
+}
 .ReviewTab{
-    height: 100%;
-    width: 100%;
-    background-color: purple;
+  padding-top:10px;
+  text-align:center;
+  font-family:Consolas;
+  background-color:white;
+  color: rgb(106, 106, 106);
+  height:100vh;
+  overflow:auto;
+
+  .BarGraph{
+    padding-top:10px;
     text-align:center;
-    
-    .BarGraph{
-        display:inline-block;
-        text-align:center;
-        background-color:Red;
-        width: 60%;
-        min-height: 60%;
-        margin-top:5%;
-        font-size: 20px;
-        color: blue;
-    }
-    .LineGraph{
-        display:inline-block;
-        text-align:center;
-        background-color:green;
-        width: 60%;
-        min-height: 60%;
-        margin-top:5%;
-        font-size: 20px;
-        color: blue;
-    }
+    font-family:Consolas;
+    background-color:white;
+    color: rgb(106, 106, 106);
+    height:100vh;
+    overflow:auto;
+    float:left;
+  }
+  .LineGraph{
+    padding-top:10px;
+    text-align:center;
+    font-family:Consolas;
+    background-color:white;
+    color: rgb(106, 106, 106);
+    height:100vh;
+    overflow:auto;
+    float:left;
+  }
 }
 
-.DoTab{
-
+  .DoTab{
+    padding-top:10px;
+    text-align:center;
+    font-family:Consolas;
+    background-color:white;
+    color: rgb(106, 106, 106);
+    height:100vh;
+    overflow:auto;
     .TodayTasks{
-        float:left;
-        background-color:green;
-        width: 300px;
-        min-height: 80%;
-        font-size: 20px;
-        color: blue;
-        margin-left:5%;
-        margin-top:5%;
+    padding-top:10px;
+    text-align:center;
+    font-family:Consolas;
+    background-color:white;
+    height:100vh;
+    overflow:auto;
+    float:left;
     }
     .TasksFromCalendar{
-        float:left;
-        background-color:green;
-        width: 300px;
-        min-height: 80%;
-        font-size: 20px;
-        color: blue;
-        margin-left:5%;
-        margin-top:5%;
-
+    padding-top:10px;
+    text-align:center;
+    font-family:Consolas;
+    background-color:white;
+    height:100vh;
+    overflow:auto;
+    border-left-style:solid;
+    border-width: 1px;
+    border-color:rgb(181, 181, 181);
+    float:left;
     }
 
 }
 
+
+.NavBar{
+  background-color:rgb(162, 212, 218);
+  color: rgb(106, 106, 106);
+  border-right-style:solid;
+  border-width: 1px;
+  border-color:rgb(181, 181, 181);
+  float:left;
+  padding-top: 20px;
+  line-height: 20px;
+  li{
+    margin: 5px 0;
+  }  
+}
+
+.Tables{
+  width:100%;
+  text-align:left;
+  margin-left: 10px;
+}
+
+.Task{
+
+}
+.TaskAction{
+
+}
+
+.TaskActionButton{
+  margin-left:5px;
+  height: 25px;
+}
+
+.btn-primary{
+  margin:5px;
+}

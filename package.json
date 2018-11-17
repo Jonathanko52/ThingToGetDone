@@ -1,5 +1,5 @@
 {
-  "name": "ThingsToGetDone",
+  "name": "thingstogetdone",
   "version": "1.0.0",
   "description": "Starting setup for react redux project",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "start": "node dev_server.js",
     "bundle": "webpack --config webpack.prod.js --progress",
     "test": "jest",
-    "css": "sass ./src/assets/css/app2.scss ./src/assets/css/app2.css"
+    "css": "sass ./src/assets/css/app.scss ./src/assets/css/app.css"
   },
   "author": "Jonathan Ko",
   "license": "ISC",
@@ -19,6 +19,8 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
