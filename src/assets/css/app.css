@@ -1,12 +1,6 @@
 html {
   font: Tahoma;
 }
-html ul {
-  list-style-type: none;
-}
-html li {
-  list-style-type: none;
-}
 
 .top-bar {
   background-color: #45d1e1;
@@ -35,7 +29,7 @@ html li {
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
   overflow: auto;
 }
@@ -44,7 +38,7 @@ html li {
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
   overflow: auto;
   float: left;
@@ -60,7 +54,7 @@ html li {
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
   overflow: auto;
   float: left;
@@ -71,16 +65,15 @@ html li {
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
-  overflow: auto;
 }
 .ProcessTab .CollectionBasket {
   padding-top: 10px;
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
   overflow: auto;
 }
@@ -108,7 +101,7 @@ html li {
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
   overflow: auto;
 }
@@ -136,7 +129,7 @@ html li {
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
   overflow: auto;
   float: left;
@@ -149,7 +142,7 @@ html li {
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
   overflow: auto;
   float: left;
@@ -169,7 +162,7 @@ html li {
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
   overflow: auto;
 }
@@ -214,16 +207,15 @@ html li {
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
-  overflow: auto;
 }
 .OrganizeTab .DeferItBox {
   padding-top: 10px;
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
   overflow: auto;
 }
@@ -260,7 +252,7 @@ html li {
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
   overflow: auto;
 }
@@ -299,16 +291,15 @@ html li {
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
-  overflow: auto;
 }
 .ReviewTab .BarGraph {
   padding-top: 10px;
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
   overflow: auto;
   float: left;
@@ -318,7 +309,7 @@ html li {
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
   overflow: auto;
   float: left;
@@ -329,7 +320,7 @@ html li {
   text-align: center;
   font-family: Consolas;
   background-color: white;
-  color: #b5b5b5;
+  color: #6a6a6a;
   height: 100vh;
   overflow: auto;
 }
@@ -357,7 +348,7 @@ html li {
 
 .NavBar {
   background-color: #a2d4da;
-  color: #b5b5b5;
+  color: #6a6a6a;
   border-right-style: solid;
   border-width: 1px;
   border-color: #b5b5b5;
@@ -365,8 +356,16 @@ html li {
   padding-top: 20px;
   line-height: 20px;
 }
-.NavBar li {
-  margin: 5px 0;
+.NavBar .NavBarLinks {
+  width: 80%;
+  margin-left: 10%;
+  background-color: #a2d4da;
+}
+.NavBar .NavBarLinks li {
+  border-top: 0 none;
+  border-left: 0 none;
+  border-right: 0 none;
+  border-bottom: 0 none;
 }
 
 .Tables {

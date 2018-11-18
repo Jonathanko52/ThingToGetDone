@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Actornot from './../presentational/actornot.js'
-import Act from './../presentational/act.js'
-import Nonact from './../presentational/nonact.js'
+import Actornot from './actornot.jsx'
+import Act from './act.jsx'
+import Nonact from './nonact.jsx'
 
 
 const Process = () => (

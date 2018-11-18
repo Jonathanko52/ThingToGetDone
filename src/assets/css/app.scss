@@ -1,11 +1,6 @@
 html{
   font:Tahoma;
-  ul{
-    list-style-type: none;
-  }
-  li{
-    list-style-type: none;
-  }
+
 }
 
 .top-bar{
@@ -73,7 +68,6 @@ html{
   background-color:white;
   color: rgb(106, 106, 106);
   height:100vh;
-  overflow:auto;
   .CollectionBasket{
     padding-top:10px;
     text-align:center;
@@ -218,7 +212,6 @@ html{
   background-color:white;
   color: rgb(106, 106, 106);
   height:100vh;
-  overflow:auto;
   .DeferItBox{
     padding-top:10px;
     text-align:center;
@@ -306,7 +299,6 @@ html{
   background-color:white;
   color: rgb(106, 106, 106);
   height:100vh;
-  overflow:auto;
 
   .BarGraph{
     padding-top:10px;
@@ -372,9 +364,20 @@ html{
   float:left;
   padding-top: 20px;
   line-height: 20px;
-  li{
-    margin: 5px 0;
-  }  
+  .NavBarLinks{
+    width: 80%;
+    margin-left: 10%;
+    background-color:rgb(162, 212, 218);
+
+    li{
+      border-top: 0 none;
+      border-left: 0 none;
+      border-right: 0 none;
+      border-bottom: 0 none;
+
+
+    }
+  }
 }
 
 .Tables{
@@ -383,12 +386,7 @@ html{
   margin-left: 10px;
 }
 
-.Task{
 
-}
-.TaskAction{
-
-}
 
 .TaskActionButton{
   margin-left:5px;

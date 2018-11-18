@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Bar from './../presentational/bar.js'
-import Line from './../presentational/line.js'
+import Bar from '../presentational/bar.jsx'
+import Line from '../presentational/line.jsx'
 
 
 const Review = () => (

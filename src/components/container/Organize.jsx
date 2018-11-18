@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Doit from './../presentational/do.js'
-import Delegate from './../presentational/delegate.js'
-import Defer from './../presentational/defer.js'
+import Doit from './OrganizeDo.jsx'
+import Delegate from './Delegate.jsx'
+import Defer from './Defer.jsx'
 
 
 
