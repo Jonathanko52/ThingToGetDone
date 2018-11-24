@@ -1,9 +1,20 @@
 import React from 'react';
 
 
-const DelegateItem = () => (
+const DelegateItem = (props) => {
+
+  let array=[];
+  if(props.content){
+    props.content.forEach((cur)=>{
+      array.push(<li>{cur}</li>)
+    })
+  }
+
+  return(
 
                         <div className="form-group DelegateItItem">
+                            <h4>{props.item}</h4>
+                            {array}
                             <div className='DelegateItItemBottom'>
                                 <input className='DelegateItForm' value='Contact Name'></input>
                                 <br></br>
@@ -16,5 +27,6 @@ const DelegateItem = () => (
                         </div>
 
  );
+}
 
 export default DelegateItem

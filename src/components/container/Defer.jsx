@@ -1,23 +1,36 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions.js'
+import DeferItem from './../presentational/deferItem.jsx'
 
 
-const Delegate = () => (
+const mapStateToProps = store => ({
+    deferItBasket:store.CollectReducer.deferItBasket
+  });
+  
+  const mapDispatchToProps = dispatch => ({
 
-<div className='col-sm-12 DeferItBox'>
-                        <h3>Delegate it</h3>
-                          <div className="form-group DeferItItem">
-                              <div className='DeferItItemBottom'>
-                                Year<input className='DeferItForm'></input>
-                                Month<input className='DeferItForm'></input>
-                                Day<input className='DeferItForm'></input>
-                                Hour<input className='DeferItForm'></input>
-                                Minute<input className='DeferItForm'></input>
+  });
 
-                                <br></br>
-                                <input className='DeferItFormButton btn btn-primary'type='submit'></input>
-                              </div>
-                          </div>
-                    </div>
-                    );
+class Defer extends React.Component {
+    constructor(props) {
+      super(props);
+    }
 
-                    export default Delegate
+  render(){
+
+    let array=[];
+    this.props.deferItBasket.forEach((cur,ind)=>{
+        array.push(
+            <DeferItem key={ind} item={cur.item} content={cur.content} />
+        )
+    })
+
+    return (<div className='col-sm-12 DeferItBox'>
+        <h3>Defer it</h3>
+          {array}
+    </div>
+    );
+    }
+}   
+export default connect(mapStateToProps, mapDispatchToProps)(Defer);

@@ -8,9 +8,9 @@ const ActornotItem = (props) => (
                 <br></br>
                     <h4>{props.contents}</h4>
                 <div className='CollectionBasketButtons'>
-                    <button className="btn btn-primary" onClick={()=>{props.moveToActionable(props.key)}}>Actionable</button>
-                    <button className="btn btn-primary" onClick={()=>{props.moveToNonActionable(props.key)}}>UnActionable</button>
-                    <button className="btn btn-primary" onClick={()=>{props.removeItem(props.key)}}>Delete</button>
+                    <button className="btn btn-primary" onClick={()=>{props.moveToActionable()}}>Actionable</button>
+                    <button className="btn btn-primary" onClick={()=>{props.moveToNonActionable()}}>UnActionable</button>
+                    <button className="btn btn-primary" onClick={()=>{props.removeItem()}}>Delete</button>
                 </div>
             </div>
 

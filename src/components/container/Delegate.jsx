@@ -1,23 +1,37 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions.js'
+import DelegateItem from './../presentational/delegateItem.jsx'
 
 
-const Delegate = () => (
+const mapStateToProps = store => ({
+    delegateItBasket:store.CollectReducer.delegateItBasket
+  });
+  
+  const mapDispatchToProps = dispatch => ({
 
-<div className="DelegateItBox col-sm-12">
-                        <h3 className="align-middle ">Delegate It</h3>
-                        <div className="form-group DelegateItItem">
-                            <div className='DelegateItItemBottom'>
-                                <input className='DelegateItForm' value='Contact Name'></input>
-                                <br></br>
-                                <input className='DelegateItForm' value='Email'></input>
-                                <br></br>
-                                <input className='DelegateItForm' value='Phone'></input>
-                                <br></br>
-                                <input className='DelegateItFormButton btn btn-primary'type='submit'></input>
-                            </div>    
-                        </div>
-                       
+  });
+
+class Delegate extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+
+  render(){
+
+    let array=[];
+    this.props.delegateItBasket.forEach((cur,ind)=>{
+        array.push(
+            <DelegateItem key={ind} item={cur.item} content={cur.content} />
+        )
+    })
+
+    return(
+    <div className="DelegateItBox col-sm-12">
+        <h3 className="align-middle ">Delegate It</h3>
+        {array}
     </div>
- );
-
-export default Delegate
+    );
+}
+}   
+export default connect(mapStateToProps, mapDispatchToProps)(Delegate);
