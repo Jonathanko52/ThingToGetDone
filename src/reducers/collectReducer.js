@@ -10,7 +10,7 @@ const initialState = {
   doItBasket:[],
   delegateItBasket:[],
   deferItBasket:[],
-  doItLatterBasket:[]
+  doItLaterBasket:[]
 }
 
 function CollectReducer(state=initialState, action) {
@@ -77,11 +77,11 @@ function CollectReducer(state=initialState, action) {
     }
 
     case types.MOVE_ACTION_TO_DO:
-    newActionableBasket = state.actionableBasket.slice()
-    let newDoItBasket = state.doItBasket.slice()
-    let newActionableItem = JSON.parse(JSON.stringify(state.actionableBasketItem))
-    newDoItBasket.push(newActionableItem)
-    newActionableBasket.shift()
+      newActionableBasket = state.actionableBasket.slice()
+      let newDoItBasket = state.doItBasket.slice()
+      let newActionableItem = JSON.parse(JSON.stringify(state.actionableBasketItem))
+      newDoItBasket.push(newActionableItem)
+      newActionableBasket.shift()
 
     return{
       ...state,
@@ -91,11 +91,11 @@ function CollectReducer(state=initialState, action) {
     }
 
     case types.MOVE_ACTION_TO_DEFER:
-    newActionableBasket = state.actionableBasket.slice()
-    let newDeferItBasket = state.deferItBasket.slice()
-    newActionableItem = JSON.parse(JSON.stringify(state.actionableBasketItem))
-    newDeferItBasket.push(newActionableItem)
-    newActionableBasket.shift()
+      newActionableBasket = state.actionableBasket.slice()
+      let newDeferItBasket = state.deferItBasket.slice()
+      newActionableItem = JSON.parse(JSON.stringify(state.actionableBasketItem))
+      newDeferItBasket.push(newActionableItem)
+      newActionableBasket.shift()
 
     return{
       ...state,
@@ -105,11 +105,11 @@ function CollectReducer(state=initialState, action) {
     }
 
     case types.MOVE_ACTION_TO_DELEGATE:
-    newActionableBasket = state.actionableBasket.slice()
-    let newDelegateItBasket = state.delegateItBasket.slice()
-    newActionableItem = JSON.parse(JSON.stringify(state.actionableBasketItem))
-    newDelegateItBasket.push(newActionableItem)
-    newActionableBasket.shift()
+      newActionableBasket = state.actionableBasket.slice()
+      let newDelegateItBasket = state.delegateItBasket.slice()
+      newActionableItem = JSON.parse(JSON.stringify(state.actionableBasketItem))
+      newDelegateItBasket.push(newActionableItem)
+      newActionableBasket.shift()
 
     return{
       ...state,
@@ -118,32 +118,53 @@ function CollectReducer(state=initialState, action) {
       actionableBasketItem:{}
     }
 
-    // const initialState = {
-    //   collectionBasket:[],
-    //   nonActionableBasket:[],
-    //   actionableBasket:[],
-    //   actionableBasketItem:{},
-    //   organizeBasket:[],
-    //   doItBasket:[],
-    //   delegateItBasket:[],
-    //   deferItBasket:[],
-    //   doItLatterBasket:[]
-    // }
-
-
 //NONACTIONABLE
     case types.NONACTIONABLE_ELIMINATE:
-    newNonActionableBasket = state.nonActionableBasket.slice()
-    newNonActionableBasket.splice(action.payload,1)
+      newNonActionableBasket = state.nonActionableBasket.slice()
+      newNonActionableBasket.splice(action.payload,1)
     return{
-    ...state,
-    nonActionableBasket:newNonActionableBasket
+      ...state,
+      nonActionableBasket:newNonActionableBasket
     }
 
+//ORGANIZE TAB DO IT
 
+      case types.MOVE_FROM_ORGANIZE_TO_DO_IT_LATER:
+        newDoItBasket = state.doItBasket.slice()
+        let newDoItLaterBasket = state.doItLaterBasket.slice()
+        let newDoItLaterItem = newDoItBasket.splice(action.payload,1)
+        newDoItLaterBasket.push(newDoItLaterItem[0])
+      return{
+          ...state,
+          doItBasket: newDoItBasket,
+          doItLaterBasket: newDoItLaterBasket
+      }
+
+//DO TAB
+
+      case types.REMOVE_DO_ACTION:
+        newDoItLaterBasket = state.doItLaterBasket.slice()
+        let itemKey = newDoItLaterBasket[action.payload[0]]
+        let contentKey = newDoItLaterBasket[action.payload[1]]
+        newDoItLaterBasket[itemKey].content.splice(contentKey,1)
+      return{
+        ...state,
+        doItLaterBasket:newDoItLaterBasket
+      }
+
+      case types.REMOVE_DO_ITEM:
+      return{
+        ...state
+      }
+
+
+
+//DEFAULT CASE
       default:
         return state
     }
   }
+
+
 
   export default CollectReducer;

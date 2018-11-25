@@ -1,101 +1,80 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions.js'
+import DoItem from './../presentational/doItem.jsx'
 
 
+const mapStateToProps = store => ({
+    doItLaterBasket:store.CollectReducer.doItLaterBasket
+  });
+  
+  const mapDispatchToProps = dispatch => ({
+    removeDoAction:(key)=>dispatch(actions.removeDoAction(key))
+  });
 
-const Do = () => (
-    <div class='DoTab'>
-    <div class='TodayTasks col-sm-6'>
-        <h3 class="align-middle">Today Tasks</h3>
-        <table class='table Tables'>
+class Do extends React.Component {
+    constructor(props) {
+      super(props);
+    }
 
-                <tbody>
-                    <tr>
-                        <td>
-                            <h5 class='Task'>Sample Item</h5>
-                            <ol>
-                            <li class='TaskAction'>Action 1 <button class='btn btn-primary'>Done</button></li>
-                            <li class='TaskAction'>Action 2 <button class='btn btn-primary '>Done</button></li>
-                            <li class='TaskAction'>Extra Action <button class='btn btn-primary '>Done</button></li>
-                            </ol> 
-                        </td>
-                    </tr>
-                    <tr>
-                            <td>
-                                <h5 class='Task'>Sample Item</h5>
-                                <ol>
-                                <li class='TaskAction'>Action 1 <button class='btn btn-primary '>Done</button></li>
-                                <li class='TaskAction'>Action 2 <button class='btn btn-primary '>Done</button></li>
-                                <li class='TaskAction'>Extra Action <button class='btn btn-primary '>Done</button></li>
-                                </ol> 
-                            </td>
-                    </tr>
-                    <tr>
-                            <td>
-                                <h5 class='Task'>Sample Item</h5>
-                                <ol>
-                                <li class='TaskAction'>Action 1 <button class='btn btn-primary '>Done</button></li>
-                                <li class='TaskAction'>Action 2 <button class='btn btn-primary '>Done</button></li>
-                                <li class='TaskAction'>Extra Action <button class='btn btn-primary '>Done</button></li>
-                                </ol> 
-                            </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h5 class='Task'>Sample Item</h5>
-                            <ol>
-                            <li class='TaskAction'>Action 1 <button class='btn btn-primary '>Done</button></li>
-                            <li class='TaskAction'>Action 2 <button class='btn btn-primary '>Done</button></li>
-                            <li class='TaskAction'>Extra Action <button class='btn btn-primary '>Done</button></li>
-                            </ol> 
-                        </td>
-                    </tr>
-                </tbody>
+    render(){
 
+        let array = [];
+        this.props.doItLaterBasket.forEach((cur,ind)=>{
+            array.push(<DoItem key={ind} itemKey={ind} item={cur.item} content={cur.content} removeDoAction={this.props.removeDoAction}/>)
+        })
+
+    return(
+    <div className='DoTab'>
+    <div className='TodayTasks col-sm-6'>
+        <h3 className="align-middle">Today Tasks</h3>
+        <table className='table Tables'>
+            {array}
         </table>
     </div>
-    <div class='TasksFromCalendar col-sm-6'>
-            <h3 class="align-middle">Today Tasks</h3>
-            <table class='table Tables'>
+    <div className='TasksFromCalendar col-sm-6'>
+            <h3 className="align-middle">Calendar Tasks</h3>
+            <table className='table Tables'>
                     <thead>
                     </thead>
                     <tbody>
                         <tr>
                             <td>
-                                <h5 class='Task'>Sample Item</h5>
+                                <h5 className='Task'>Sample Item</h5>
                                 <ol>
-                                <li class='TaskAction'>Action 1 <button class='btn btn-primary '>Done</button></li>
-                                <li class='TaskAction'>Action 2 <button class='btn btn-primary '>Done</button></li>
-                                <li class='TaskAction'>Extra Action <button class='btn btn-primary '>Done</button></li>
+                                <li className='TaskAction'>Action 1 <button className='btn btn-primary '>Done</button></li>
+                                <li className='TaskAction'>Action 2 <button className='btn btn-primary '>Done</button></li>
+                                <li className='TaskAction'>Extra Action <button className='btn btn-primary '>Done</button></li>
                                 </ol> 
                             </td>
                         </tr>
                         <tr>
                                 <td>
-                                    <h5 class='Task'>Sample Item</h5>
+                                    <h5 className='Task'>Sample Item</h5>
                                     <ol>
-                                    <li class='TaskAction'>Action 1 <button class='btn btn-primary '>Done</button></li>
-                                    <li class='TaskAction'>Action 2 <button class='btn btn-primary '>Done</button></li>
-                                    <li class='TaskAction'>Extra Action <button class='btn btn-primary '>Done</button></li>
+                                    <li className='TaskAction'>Action 1 <button className='btn btn-primary '>Done</button></li>
+                                    <li className='TaskAction'>Action 2 <button className='btn btn-primary '>Done</button></li>
+                                    <li className='TaskAction'>Extra Action <button className='btn btn-primary '>Done</button></li>
                                     </ol> 
                                 </td>
                         </tr>
                         <tr>
                                 <td>
-                                    <h5 class='Task'>Sample Item</h5>
+                                    <h5 className='Task'>Sample Item</h5>
                                     <ol>
-                                    <li class='TaskAction'>Action 1 <button class='btn btn-primary '>Done</button></li>
-                                    <li class='TaskAction'>Action 2 <button class='btn btn-primary '>Done</button></li>
-                                    <li class='TaskAction'>Extra Action <button class='btn btn-primary '>Done</button></li>
+                                    <li className='TaskAction'>Action 1 <button className='btn btn-primary '>Done</button></li>
+                                    <li className='TaskAction'>Action 2 <button className='btn btn-primary '>Done</button></li>
+                                    <li className='TaskAction'>Extra Action <button className='btn btn-primary '>Done</button></li>
                                     </ol> 
                                 </td>
                             </tr>
                             <tr>
                                     <td>
-                                        <h5 class='Task'>Sample Item</h5>
+                                        <h5 className='Task'>Sample Item</h5>
                                         <ol>
-                                        <li class='TaskAction'>Action 1 <button class='btn btn-primary '>Done</button></li>
-                                        <li class='TaskAction'>Action 2 <button class='btn btn-primary '>Done</button></li>
-                                        <li class='TaskAction'>Extra Action <button class='btn btn-primary '>Done</button></li>
+                                        <li className='TaskAction'>Action 1 <button className='btn btn-primary '>Done</button></li>
+                                        <li className='TaskAction'>Action 2 <button className='btn btn-primary '>Done</button></li>
+                                        <li className='TaskAction'>Extra Action <button className='btn btn-primary '>Done</button></li>
                                         </ol> 
                                     </td>
                                 </tr>
@@ -104,8 +83,7 @@ const Do = () => (
             </table>
 
     </div>
-</div>
+</div>);
+}}
 
-);
-
-export default Do
+export default connect(mapStateToProps, mapDispatchToProps)(Do);

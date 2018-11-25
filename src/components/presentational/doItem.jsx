@@ -1,15 +1,25 @@
 import React from 'react';
 
 
-const DoItem = () => (
+const DoItem = (props) => {
+    let array = [];
+    props.content.forEach((cur,ind)=>{
+        array.push(<li key={ind} contentKey={ind} 
+            className='TaskAction'>{cur}
+            <button className='btn btn-primary' 
+            onClick={()=>{props.removeDoAction([props.itemKey,ind])}}>
+            Done</button></li>)
+    })
 
-                        <div className='DoItItem col-sm-6'>
-                            <h4>2:00</h4>
-                            <div className='DoItItemButtons'>
-                                <button className="btn btn-primary">Start</button>
-                                <button className="btn btn-primary">Stop</button>
-                            </div>
-                        </div>
-);
+    return(
+    <tr>
+        <td>
+        <h5 className='Task'>{props.item}</h5>
+            <ol>
+                {array}
+            </ol> 
+        </td>
+    </tr>
+)};
 
 export default DoItem

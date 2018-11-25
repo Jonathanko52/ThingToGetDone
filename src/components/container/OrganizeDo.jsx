@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions.js'
+import OrganizeDoItem from './../presentational/organizeDoItem.jsx'
 
 
 const mapStateToProps = store => ({
@@ -8,7 +9,7 @@ const mapStateToProps = store => ({
   });
   
   const mapDispatchToProps = dispatch => ({
-
+    moveFromOrganizeToDoItLater:(key)=>dispatch(actions.moveFromOrganizeToDoItLater(key))
   });
 
 class DoIt extends React.Component {
@@ -19,20 +20,15 @@ class DoIt extends React.Component {
     render(){
 
         let array=[];
-        let tempArray = [];
         this.props.doItBasket.forEach((cur,ind)=>{
             if(cur.content){
-                tempArray = [];
-                cur.content.forEach((cur2)=>{
-                    tempArray.push(<li>{cur2}</li>)
-                })
-            }
+                array.push(
+                    <OrganizeDoItem key={ind} item={cur.item} content={cur.content} action={this.props.moveFromOrganizeToDoItLater}/>
+                )
+            } else {
             array.push(
-                <div key={ind}>
-                    <h4>{cur.item}</h4>
-                    {tempArray}
-                </div>
-            )
+                <OrganizeDoItem key={ind} item={cur.item} action={this.props.moveFromOrganizeToDoItLater}/>
+            )}
         })
     
         return(
@@ -41,10 +37,6 @@ class DoIt extends React.Component {
                     <div className='DoItList col-sm-6'>
                         <h4>Do it Items</h4>
                         {array}
-                        <div className='DoItItemButtons'>
-                            <button className="btn btn-primary">Do it later</button>
-                            <button className="btn btn-primary">Do it later</button>
-                        </div>
                     </div>
                     <div className='DoItItem col-sm-6'>
                         <h4>2:00</h4>

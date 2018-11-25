@@ -4,8 +4,8 @@ import React from 'react';
 const ActItem = (props) => {
     let array = []
     if(props.sub){
-        props.sub.forEach((cur)=>{
-            array.push(<li>{cur}</li>)
+        props.sub.forEach((cur,ind)=>{
+            array.push(<li key='ind'>{cur}</li>)
         })
     }
     

@@ -1,5 +1,6 @@
 import * as types from './actionTypes.js';
 
+//COLLECT TAB ACTIONS
 export const addCollectionItem = (item) =>({
     type:types.ADD_COLLECTION_ITEM,
     payload: item
@@ -10,6 +11,7 @@ export const removeCollectionItem = (key) =>({
     payload: key
 })
 
+//PROCESS TAB FIRST SORT ACTIONS
 export const moveToActionable = (key) =>({
     type:types.MOVE_TO_ACTIONABLE,
     payload: key
@@ -20,7 +22,7 @@ export const moveToNonActionable = (key) =>({
     payload: key
 })
 
-//ACTIONABLE
+//PROCESS TAB ACTIONABLE ACTIONS
 
 
 export const changeActionableItem = (item) =>({
@@ -49,8 +51,35 @@ export const moveActionToDelegate = (item) => ({
 
 
 
-//NONACTIONABLE
+//PROCESS TABLE NONACTIONABLE ACTIONS
 export const nonActionableEliminate = (item) =>({
     type:types.NONACTIONABLE_ELIMINATE,
+    payload: item
+})
+
+//ORGANIZE TAB DO
+
+export const moveFromOrganizeToDoItNow = (item) =>({
+    type:types.MOVE_FROM_ORGANIZE_TO_DO_IT_NOW,
+    payload: item
+})
+
+export const moveFromOrganizeToDoItLater = (item) =>({
+    type:types.MOVE_FROM_ORGANIZE_TO_DO_IT_LATER,
+    payload: item
+})
+
+//ORGANIZE TAB DELEGATE
+
+//ORGANIZE TAB DEFER
+
+//DO TAB
+export const removeDoAction = (keyArray) =>({
+    type:types.REMOVE_DO_ACTION,
+    payload: keyArray
+})
+
+export const removeDoItem = (item )=>({
+    type:types.REMOVE_DO_ITEM,
     payload: item
 })
