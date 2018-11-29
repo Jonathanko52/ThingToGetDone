@@ -6,7 +6,7 @@ const organizeDoItem = (props) => {
     let array=[];
     if(props.content){
       props.content.forEach((cur)=>{
-        array.push(<li>{cur}</li>)
+        array.push(<li className='OrganizeDoItemLine'>{cur}</li>)
       })
     }
   

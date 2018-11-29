@@ -19,7 +19,9 @@ function CollectReducer(state=initialState, action) {
     switch (action.type) {
     case types.ADD_COLLECTION_ITEM:
         let newCollectionBasket = state.collectionBasket.slice()
-        newCollectionBasket.push(action.payload)
+        let newItem = action.payload.item[0].toUpperCase() + action.payload.item.substring(1)
+        console.log(newItem)
+        newCollectionBasket.push({item:newItem})
       return{
         ...state,
         collectionBasket:newCollectionBasket
@@ -70,7 +72,7 @@ function CollectReducer(state=initialState, action) {
 
     case types.CHANGE_ACTIONABLE_CONTENT:
       newActionableBasketItem = JSON.parse(JSON.stringify(state.actionableBasketItem))
-      newActionableBasketItem.content.push(action.payload)
+      newActionableBasketItem.content.push(action.payload[0].toUpperCase() + action.payload.substring(1))
     return{
       ...state,
       actionableBasketItem: newActionableBasketItem
@@ -144,9 +146,16 @@ function CollectReducer(state=initialState, action) {
 
       case types.REMOVE_DO_ACTION:
         newDoItLaterBasket = state.doItLaterBasket.slice()
-        let itemKey = newDoItLaterBasket[action.payload[0]]
-        let contentKey = newDoItLaterBasket[action.payload[1]]
+        let itemKey = action.payload[0]
+        let contentKey = action.payload[1]
+        console.log(action.payload)
+        console.log(newDoItLaterBasket)
+        console.log(newDoItLaterBasket[itemKey], 'itemKey')
+        console.log(newDoItLaterBasket[itemKey].content)
         newDoItLaterBasket[itemKey].content.splice(contentKey,1)
+        if(newDoItLaterBasket[itemKey].content.length === 0){
+          newDoItLaterBasket.splice(itemKey,1)
+        }
       return{
         ...state,
         doItLaterBasket:newDoItLaterBasket

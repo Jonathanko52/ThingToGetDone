@@ -5,7 +5,7 @@ const ActItem = (props) => {
     let array = []
     if(props.sub){
         props.sub.forEach((cur,ind)=>{
-            array.push(<li key='ind'>{cur}</li>)
+            array.push(<li key='ind' className='ActionableItemLine'>{cur}</li>)
         })
     }
     

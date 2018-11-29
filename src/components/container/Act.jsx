@@ -49,6 +49,7 @@ class Act extends React.Component {
             <div className="ProcessTab">
                 <div className='col-sm-6 ActionableList'>
                     <h3>Actionable List</h3>
+                    <br></br>
                     {array}
                     
                 </div>

@@ -137,6 +137,10 @@ html {
   border-right-style: solid;
   border-width: 1px;
 }
+.ProcessTab .ActionableList .ActionableItem {
+  text-align: left;
+  margin-left: 20px;
+}
 .ProcessTab .Actionable {
   padding-top: 10px;
   text-align: center;
@@ -179,7 +183,8 @@ html {
   overflow: auto;
   float: left;
 }
-.DoItList .OrganizeDoItem {
+
+.OrganizeDoItem {
   border-style: inset;
   border-color: #b5b5b5;
   border-width: 1px;
@@ -191,12 +196,17 @@ html {
   float: left;
   border-radius: 10px;
 }
-.DoItList .OrganizeDoButtons {
+.OrganizeDoItem .OrganizeDoItemLine {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.OrganizeDoButtons {
   position: absolute;
   bottom: 7px;
   width: 398px;
 }
-.DoItList .OrganizeDoButtons button {
+.OrganizeDoButtons button {
   margin: 5px;
 }
 
