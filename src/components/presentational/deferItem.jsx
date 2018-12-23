@@ -20,17 +20,30 @@ const DeferItem = (props) => {
             {array}
           </div>
           <div className='DeferItItemBottom'>
-            Year<input className='DeferItForm'></input>
-            Month<input className='DeferItForm'></input>
-            Day<input className='DeferItForm'></input>
-            Hour<input className='DeferItForm'></input>
-            Minute<input className='DeferItForm'></input>
+            Year<input id='year' className='DeferItForm'></input>
+            Month<input id='month' className='DeferItForm'></input>
+            Day<input id='day' className='DeferItForm'></input>
+            Hour<input id='hour' className='DeferItForm'></input>
+            Minute<input id='minute' className='DeferItForm'></input>
 
             <br></br>
-            <input className='DeferItFormButton btn btn-primary'type='submit'></input>
+            <button className='DeferItFormButton btn btn-primary'type='submit'
+            onClick={()=>{
+              let eventObject = {}
+              let year = document.getElementById('year').value
+              let month = document.getElementById('month').value
+              let day = document.getElementById('day').value
+              let hour = document.getElementById('hour').value
+              let minute = document.getElementById('minute').value
+              eventObject.date = year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00"
+              eventObject.item = props.item
+              let arrayToString = array.toString()
+              eventObject.content = arrayToString
+              props.postEventToCalendar(eventObject)
+            }}>Submit</button>
           </div>
       </div>
   );
 }
 
-                    export default DeferItem
+export default DeferItem

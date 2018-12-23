@@ -7,6 +7,9 @@ const NavBar = () => (
     <div className="col-sm-2 NavBar list-group">
           <div className='NavBarLinks'>
           <li className='list-group-item list-group-item-action'>
+            <Link to="/">Login</Link>
+          </li>
+          <li className='list-group-item list-group-item-action'>
             <Link to="/collect">Collect</Link>
           </li>
           <li className='list-group-item list-group-item-action'>

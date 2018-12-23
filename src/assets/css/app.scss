@@ -25,6 +25,40 @@ html{
     min-height:100vh;
     float:left;
   }
+  .LoginPage{
+    padding-top:10px;
+    text-align:center;
+    font-family:Consolas;
+    background-color:white;
+    color: rgb(106, 106, 106);
+    height:100vh;
+    overflow:auto;
+  }
+  .LoginBox{
+    padding-top:10px;
+    text-align:center;
+    font-family:Consolas;
+    background-color:white;
+    color: rgb(106, 106, 106);
+    height:100vh;
+    overflow:auto;
+    border-style:inset;
+    border-color:rgb(181, 181, 181);
+    border-width:1px;
+    position:relative;
+    height: 300px;
+    margin-left: 30px;
+    margin-top: 30px;
+    border-radius:10px;
+    width:40%;
+    float:left;
+    .LoginButtons{
+      position:absolute;
+      width: 100%;
+      left:50%;
+      margin-left:-50%;
+    }
+  }
   .CollectTab{
     padding-top:10px;
     text-align:center;

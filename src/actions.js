@@ -1,4 +1,41 @@
 import * as types from './actionTypes.js';
+import fetch from 'cross-fetch';
+import moment from "moment";
+const CALENDAR_ID = 'rbus2ih1t35gj1kcdghh66uj10@group.calendar.google.com'
+const CLIENT_ID = '378958687274-a3mtd0dvan6i5g4b6h6i7t4so9lfrgb0.apps.googleusercontent.com'
+const API_KEY = 'AIzaSyBb0YFWcBDP-_SIs7Go-KkLmr2jWGltbzw'
+let url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${API_KEY}`
+var GoogleAuth;
+
+
+//LOGIN TAB ACTIONS
+
+export const loadGoogleClient = () => {
+    return (dispatch)=>{
+        console.log('loadGoogleClient run in actions')
+        gapi.load('client:auth2', initGoogleClient);
+    }
+}
+
+export const initGoogleClient = () =>{
+    return (dispatch)=>{
+
+            gapi.client.init({
+                'apiKey': API_KEY,
+                'clientId': CLIENT_ID,
+                'scope': 'https://www.googleapis.com/auth/calendar',
+                'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest']
+            }).then(function () {
+                console.log('SO FAR SO GOOD')
+                GoogleAuth = gapi.auth2.getAuthInstance();
+        
+                // Listen for sign-in state changes.
+                GoogleAuth.signIn()
+            });
+        
+    }
+}
+
 
 //COLLECT TAB ACTIONS
 export const addCollectionItem = (item) =>({
@@ -69,9 +106,189 @@ export const moveFromOrganizeToDoItLater = (item) =>({
     payload: item
 })
 
+
+export const startTimer = (item) =>({
+    type: types.START_TIMER,
+    payload: item
+})
+
+export const stopTimer = () =>({
+    type: types.STOP_TIMER,
+    payload:item
+})
+export const resetTimer = () => ({
+    type: types.RESET_TIMER,
+    payload: item
+})
+
+export const removeDoItNowItem = () => ({
+    type: types.REMOVE_DO_IT_NOW_ITEM,
+    payload: item
+})
+
 //ORGANIZE TAB DELEGATE
 
 //ORGANIZE TAB DEFER
+export const loadAuth = (key)=>({
+    type:types.LOAD_AUTH,
+    payload:key
+})
+
+export function postEventToCalendar(ItemAndDate){
+    console.log(ItemAndDate, 'POST EVENT')
+    return (dispatch)=>{
+        dispatch(postCalendarBegin(true))
+        function postToCalendar(){
+            gapi.client.init({
+                'apiKey': API_KEY,
+                'discoveryDocs': ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
+                'clientId': CLIENT_ID,
+                'scope': 'https://www.googleapis.com/auth/calendar',
+            }).then(()=>{
+                let request = gapi.client.calendar.events.insert({
+                    'calendarId': CALENDAR_ID,
+                    'resource':{
+                        'summary':ItemAndDate.item,
+                        'description':ItemAndDate.content,
+                        'start':{
+                            'dateTime':ItemAndDate.date,
+                            'timeZone': 'America/Los_Angeles'
+                        },
+                        'end': {
+                          'dateTime': ItemAndDate.date,
+                          'timeZone': 'America/Los_Angeles'
+                        },
+                    },
+                })
+                request.execute(function(event) {
+                    console.log("EVENT",event);
+                    console.log("EVENT.DATA",event.data);
+    
+                });
+            }).then((response) => {
+                console.log('POST EVENT RESPONSE')
+                dispatch(postCalendarSuccess(true))
+            }, function(reason) {
+                dispatch(postCalendarFailure(true))
+                console.log('Reasons',reason);
+            }).catch((error)=>{
+                console.log("PROMISE ERROR", error)
+            })
+        }
+        gapi.load('client', postToCalendar)
+        }
+    }
+
+export function postEvent(){
+return (dispatch)=>{
+    dispatch(postCalendarBegin(true))
+    function post(){
+        console.log("POST INITIATED")
+        gapi.client.init({
+            'apiKey': API_KEY,
+            'discoveryDocs': ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
+            'clientId': CLIENT_ID,
+            'scope': 'https://www.googleapis.com/auth/calendar',
+        }).then(()=>{
+            console.log("POST SECOND STEP")
+            let request = gapi.client.calendar.events.insert({
+                'calendarId': CALENDAR_ID,
+                'resource': {
+                    'summary': 'Google I/O 2015',
+                    'location': '800 Howard St., San Francisco, CA 94103',
+                    'description': 'A chance to hear more about Google\'s developer products.',
+                    'start': {
+                      'dateTime': '2018-12-29T09:00:00-07:00',
+                      'timeZone': 'America/Los_Angeles'
+                    },
+                    'end': {
+                      'dateTime': '2018-12-29T17:00:00-07:00',
+                      'timeZone': 'America/Los_Angeles'
+                    },
+                  }
+            })
+            request.execute(function(event) {
+                console.log("EVENT",event);
+                console.log("EVENT.DATA",event.data);
+
+            });
+        }).then((response) => {
+            console.log('POST EVENT RESPONSE')
+            dispatch(postCalendarSuccess(true))
+        }, function(reason) {
+            dispatch(postCalendarFailure(true))
+            console.log('Reasons',reason);
+        }).catch((error)=>{
+            console.log("PROMISE ERROR", error)
+        })
+    }
+    gapi.load('client', post)
+    }
+}
+
+const postCalendarBegin = () => ({
+    type: types.POST_CALENDAR_BEGIN
+  });
+  
+  const postCalendarSuccess = (events) => ({
+    type: types.POST_CALENDAR_SUCCESS,
+    payload:{events}
+  });
+  
+  const postCalendarFailure = error => ({
+    type: types.POST_CALENDAR_FAILURE,
+    payload: {
+      error
+    }
+  });
+
+export function retrieveCalendar(){
+    return (dispatch)=>{
+        dispatch(loadCalendarBegin(true))
+
+        function retrieve(){
+            gapi.client.init({
+                'apiKey': API_KEY
+            }).then(()=>{
+                console.log('RETRIEVE SECOND STEP')
+                return gapi.client.request({
+                    'path': `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events`
+                })
+            }).then((response) => {
+                console.log("RETRIEVED")
+                let  events = []
+                response.result.items.map((event) => {
+                            events.push({
+                              start: event.start.date || event.start.dateTime,
+                              end: event.end.date || event.end.dateTime,
+                              title: event.summary,
+                            })
+                })
+                dispatch(loadCalendarSuccess(events))
+                
+            }, function(reason) {
+                console.log('Reasons',reason);
+            })
+        }
+        gapi.load('client', retrieve)
+    }
+}
+
+  const loadCalendarBegin = () => ({
+    type: types.LOAD_CALENDAR_BEGIN
+  });
+  
+  const loadCalendarSuccess = (events) => ({
+    type: types.LOAD_CALENDAR_SUCCESS,
+    payload:{events}
+  });
+  
+  const loadCalendarFailure = error => ({
+    type: types.LOAD_CALENDAR_FAILURE,
+    payload: {
+      error
+    }
+  });
 
 //DO TAB
 export const removeDoAction = (keyArray) =>({

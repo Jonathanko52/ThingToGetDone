@@ -7,6 +7,7 @@ import Process from './container/Process.jsx'
 import Organize from './container/Organize.jsx'
 import Review from './container/Review.jsx'
 import Do from './container/Do.jsx'
+import Login from './container/Login.jsx'
 
 
 
@@ -22,7 +23,8 @@ const App = () => (
                 <div className="row no-gutters main-page">
                     <NavBar />
                     <div className="col-sm-10">
-                            <Route exact path="/collect" component={Collect} />
+                            <Route path="/collect" component={Collect} />
+                            <Route exact path='/' component={Login} />
                             <Route path="/process" component={Process} />
                             <Route path="/organize" component={Organize} />
                             <Route path="/review" component={Review} />

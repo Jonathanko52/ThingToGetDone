@@ -24,6 +24,41 @@ html {
   min-height: 100vh;
   float: left;
 }
+.main-page .LoginPage {
+  padding-top: 10px;
+  text-align: center;
+  font-family: Consolas;
+  background-color: white;
+  color: #6a6a6a;
+  height: 100vh;
+  overflow: auto;
+}
+.main-page .LoginBox {
+  padding-top: 10px;
+  text-align: center;
+  font-family: Consolas;
+  background-color: white;
+  color: #6a6a6a;
+  height: 100vh;
+  overflow: auto;
+  border-style: inset;
+  border-color: #b5b5b5;
+  border-width: 1px;
+  position: relative;
+  height: 300px;
+  margin-left: 30px;
+  margin-top: 30px;
+  border-radius: 10px;
+  width: 40%;
+  float: left;
+}
+.main-page .LoginBox .LoginButtons {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  margin-left: -50%;
+  margin-bottom: 5px;
+}
 .main-page .CollectTab {
   padding-top: 10px;
   text-align: center;
@@ -137,7 +172,7 @@ html {
   border-right-style: solid;
   border-width: 1px;
 }
-.ProcessTab .ActionableList .ActionableItem {
+.ProcessTab .ActionableList .ActionableItemLine {
   text-align: left;
   margin-left: 20px;
 }

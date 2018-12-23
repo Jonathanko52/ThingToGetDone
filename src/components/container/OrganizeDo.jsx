@@ -4,12 +4,15 @@ import * as actions from '../../actions.js'
 import OrganizeDoItem from './../presentational/organizeDoItem.jsx'
 
 
-const mapStateToProps = store => ({
-    doItBasket:store.CollectReducer.doItBasket
+  const mapStateToProps = store => ({
+    doItBasket:store.CollectReducer.doItBasket,
+    timerValue:store.CollectReducer.timerValue
   });
   
   const mapDispatchToProps = dispatch => ({
-    moveFromOrganizeToDoItLater:(key)=>dispatch(actions.moveFromOrganizeToDoItLater(key))
+    moveFromOrganizeToDoItLater:(key)=>dispatch(actions.moveFromOrganizeToDoItLater(key)),
+    startTimer:(key)=>dispatch(actions.startTimer(key))
+
   });
 
 class DoIt extends React.Component {
@@ -30,6 +33,9 @@ class DoIt extends React.Component {
                 <OrganizeDoItem key={ind} item={cur.item} action={this.props.moveFromOrganizeToDoItLater}/>
             )}
         })
+
+
+
     
         return(
                 <div className='col-sm-12 DoItBox'>
@@ -39,9 +45,23 @@ class DoIt extends React.Component {
                         {array}
                     </div>
                     <div className='DoItItem col-sm-6'>
-                        <h4>2:00</h4>
+                        <h4>{this.props.timerValue}</h4>
                         <div className='DoItItemButtons'>
-                            <button className="btn btn-primary">Start</button>
+                            <button className="btn btn-primary" onClick={
+                            ()=>{
+                                let timerStarted = setInterval(
+                                    ()=>{
+                                    console.log(this.props.timerValue)
+                                    this.props.startTimer(timerStarted)
+                                },1000)
+                                console.log("BUTTON PRESSED")
+                                if(this.props.timerValue === 0){
+                                    console.log('IF')
+                                    clearInterval(timerStarted)
+                                }
+                                
+                            }
+                                }>Start</button>
                             <button className="btn btn-primary">Stop</button>
                         </div>
                     </div>

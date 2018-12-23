@@ -16,13 +16,17 @@
     "url": ""
   },
   "dependencies": {
+    "cross-fetch": "^2.2.3",
+    "moment": "^2.22.2",
     "react": "^16.5.2",
+    "react-big-calendar": "^0.20.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "superagent": "^4.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
