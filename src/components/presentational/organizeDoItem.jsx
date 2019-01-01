@@ -16,8 +16,8 @@ const organizeDoItem = (props) => {
             <h4>{props.item}</h4>
             {array}
         <div className='OrganizeDoButtons'>
-            <button className="btn btn-primary" onClick={()=>{props.moveToActionable()}}>Do Now</button>
-            <button className="btn btn-primary" onClick={()=>{props.action()}}>Do Later</button>
+            <button className="btn btn-primary" onClick={()=>{props.removeDoItNowItem(props.ind)}}>Done</button>
+            <button className="btn btn-primary" onClick={()=>{props.moveFromOrganizeToDoItLater(props.ind)}}>Do Later</button>
         </div>
     </div>)
 

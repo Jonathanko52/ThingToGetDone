@@ -14,7 +14,7 @@ const NavBar = () => (
           </li>
           <li className='list-group-item list-group-item-action'>
             <Link to="/process">Process</Link>
-                <li className='list-group-item list-group-item-action'><Link to="/process/actornot">First Sort</Link></li>
+                <li className='list-group-item list-group-item-action'><Link to="/process/">First Sort</Link></li>
                 <li className='list-group-item list-group-item-action'><Link to="/process/nonact">NonActionable</Link></li>
                 <li className='list-group-item list-group-item-action'><Link to="/process/act">Actionable</Link></li>
           </li>

@@ -24,7 +24,8 @@ class Actornot extends React.Component {
         let array=[];
         this.props.collectionBasket.forEach((cur,ind)=>{
             array.push(<ActornotItem 
-                key={ind} 
+                key={ind}
+                ind={ind}
                 contents={cur.item} 
                 removeItem={this.props.removeCollectionItem} 
                 moveToActionable={this.props.moveToActionable}
@@ -36,6 +37,8 @@ class Actornot extends React.Component {
     return(
         <div className="ProcessTab">    
             <div className='col-sm-12 CollectionBasket'>
+                <h3>Is it Actionable?</h3>
+
                 {array}
 
             </div>

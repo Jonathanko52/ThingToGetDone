@@ -8,7 +8,7 @@ import Nonact from './nonact.jsx'
 const Process = () => (
     <div className="ProcessTab">      
         <h1>Process</h1>  
-        <Route path="/process/actornot" component={Actornot} />
+        <Route exact path="/process/" component={Actornot} />
         <Route path="/process/nonact" component={Nonact} />
         <Route path="/process/act" component={Act} />
     </div>

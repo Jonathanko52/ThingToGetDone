@@ -57,7 +57,6 @@ html {
   width: 100%;
   left: 50%;
   margin-left: -50%;
-  margin-bottom: 5px;
 }
 .main-page .CollectTab {
   padding-top: 10px;
@@ -93,6 +92,12 @@ html {
   height: 100vh;
   overflow: auto;
   float: left;
+}
+.main-page .CollectTab .CollectedList li {
+  margin-top: 20px;
+  text-align: left;
+  margin-left: 20px;
+  font-size: 20px;
 }
 
 .ProcessTab {
@@ -171,6 +176,12 @@ html {
   border-color: #b5b5b5;
   border-right-style: solid;
   border-width: 1px;
+}
+.ProcessTab .ActionableList h4 {
+  margin-top: 20px;
+  text-align: left;
+  margin-left: 20px;
+  font-size: 20px;
 }
 .ProcessTab .ActionableList .ActionableItemLine {
   text-align: left;

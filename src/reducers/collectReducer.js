@@ -16,7 +16,9 @@ const initialState = {
   deferItBasket:[],
   doItLaterBasket:[],
   calendarEvents:[],
-  timerValue: 120
+  timerValue: 60,
+  timerRunning: false,
+  timerInterval: null,
 }
 
 function CollectReducer(state=initialState, action) {
@@ -35,8 +37,8 @@ function CollectReducer(state=initialState, action) {
 
     case types.REMOVE_COLLECTION_ITEM:
         newCollectionBasket = state.collectionBasket.slice()
-        newCollectionBasket.splice(action.payload,1)
-        alert("Item: '" + action.payload[0].item + "' deleted")
+        let deletedCollectionBasketItem = newCollectionBasket.splice(action.payload,1)
+        alert("Item: '" + deletedCollectionBasketItem[0].item + "' deleted")
 
       return{
         ...state,
@@ -48,6 +50,7 @@ function CollectReducer(state=initialState, action) {
         let newActionableBasket = state.actionableBasket.slice()
         newCollectionBasket = state.collectionBasket.slice()
         let newAction = newCollectionBasket.splice(action.payload,1)
+        console.log('ACTION PAYLOAD', action.payload)
         newActionableBasket.push(newAction[0])
         console.log(newAction[0])
         alert("Item: '" + newAction[0].item + "' moved to Actionable Basket")
@@ -167,32 +170,53 @@ function CollectReducer(state=initialState, action) {
           doItBasket: newDoItBasket,
           doItLaterBasket: newDoItLaterBasket
       }
-
-      case types.MOVE_FROM_ORGANIZE_TO_DO_IT_NOW:
-
-      return{
-        ...state
+          
+      case types.REMOVE_DO_IT_NOW_ITEM:
+        console.log(action.payload)
+        let newDoItNowBasket = state.doItBasket.slice()
+        let removedItem = newDoItNowBasket.splice(action.payload,1)
+        console.log(removedItem)
+      return {
+        ...state,
+        doItBasket: newDoItNowBasket
       }
+
 
     
       case types.START_TIMER:
-          let newTimerValue = state.timerValue
+      let newTimerValue = state.timerValue
           newTimerValue--
-
-          if(newTimerValue === 0){
+          if(newTimerValue <= 0){
+            console.log('INTERVAL CLEAR RUNNING', action.payload)
             clearInterval(action.payload)
-            newTimerValue = 120
+            newTimerValue = 60
           }
 
-          return{
-            ...state,
-            timerValue:newTimerValue
-          }
+        return{
+          ...state,
+          timerValue:newTimerValue,
+          timerInterval:action.payload
+        }
+      case types.TOGGLE_TIMER_RUNNING_ON:
+        
+      return{
+        ...state,
+        timerRunning: true
+      }
 
+      case types.TOGGLE_TIMER_RUNNING_OFF:
+      return{
+        ...state,
+        timerRunning: false
+      }
+        
 
 
     
-      case types.STOP_TIMER:
+      case types.PAUSE_TIMER:
+        console.log('PAUSE TIMER RUN', state.timerInterval)
+        clearInterval(state.timerInterval)
+          
 
       return {
         ...state
@@ -202,12 +226,7 @@ function CollectReducer(state=initialState, action) {
       return {
         ...state
       }
-    
-      case types.REMOVE_DO_IT_NOW_ITEM:
 
-      return {
-        ...state
-      }
 
 
 //DEFER IT

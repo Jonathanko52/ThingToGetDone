@@ -106,14 +106,28 @@ export const moveFromOrganizeToDoItLater = (item) =>({
     payload: item
 })
 
+export const removeDoItNowItem = (item) => ({
+    type: types.REMOVE_DO_IT_NOW_ITEM,
+    payload: item
+})
 
 export const startTimer = (item) =>({
     type: types.START_TIMER,
     payload: item
 })
 
-export const stopTimer = () =>({
-    type: types.STOP_TIMER,
+export const toggleTimerRunnerOn = (item) =>({
+    type: types.TOGGLE_TIMER_RUNNING_ON,
+    payload: item
+})
+
+export const toggleTimerRunnerOff = (item) =>({
+    type: types.TOGGLE_TIMER_RUNNING_OFF,
+    payload: item
+})
+
+export const pauseTimer = (item) =>({
+    type: types.PAUSE_TIMER,
     payload:item
 })
 export const resetTimer = () => ({
@@ -121,10 +135,7 @@ export const resetTimer = () => ({
     payload: item
 })
 
-export const removeDoItNowItem = () => ({
-    type: types.REMOVE_DO_IT_NOW_ITEM,
-    payload: item
-})
+
 
 //ORGANIZE TAB DELEGATE
 

@@ -25,6 +25,7 @@ class Act extends React.Component {
 
     render(){
         let array=[];
+        let array1=[];
         if(this.props.actionableBasket.length > 0){
             if(this.props.actionableBasketItem.item !== this.props.actionableBasket[0].item){
                 this.props.changeActionItem(this.props.actionableBasket[0].item)
@@ -37,7 +38,7 @@ class Act extends React.Component {
             }
             this.props.actionableBasket.forEach((cur,ind)=>{
                 if(ind >= 1){
-                    array.push(<ul
+                    array1.push(<ul
                         key={ind}> 
                         {cur.item}
                         </ul>)
@@ -50,7 +51,9 @@ class Act extends React.Component {
                 <div className='col-sm-6 ActionableList'>
                     <h3>Actionable List</h3>
                     <br></br>
-                    {array}
+                    <h4>Current Item:</h4> {array}
+                    <br></br>
+                    <h4>Next Item:</h4> {array1}
                     
                 </div>
                 <div className='col-sm-6 Actionable'>

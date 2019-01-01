@@ -19,7 +19,7 @@ const mapStateToProps = store => ({
     render(){
         let array=[];
         this.props.collectionBasket.forEach((cur,ind)=>{
-            array.push(<li key={ind}>{cur.item}<button onClick={()=>{this.props.removeCollectionItem(ind)}}></button></li>)
+            array.push(<li key={ind}>{cur.item}<button className='btn btn-primary' onClick={()=>{this.props.removeCollectionItem(ind)}}>Delete</button></li>)
         })
         return(
         <div className="row CollectTab">
@@ -32,12 +32,13 @@ const mapStateToProps = store => ({
                     })
                     document.getElementById('TaskCollection').value ='';
                     }}>
-                    <h3>Input Task</h3>
+                    <h3>Input Items</h3>
                     <textarea className="form-control" rows="4" id="TaskCollection"></textarea>
                     <input type="submit" className="btn btn-primary TaskCollectionButton" value="Submit"></input>
                 </form>
             </div>
             <div className="col-sm-6 CollectedList">
+                <h3>Collection Basket Items</h3>
                 {array}
             </div>
         </div>)
